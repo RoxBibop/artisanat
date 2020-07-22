@@ -1,7 +1,6 @@
 <template>
   <div class="question">
     <p>{{questionTxt}}</p>
-    
   </div>
 </template>
 
@@ -21,5 +20,10 @@ export default {
     bottom : 50px;
     left : 50%;
     transform: translateX(-50%);
+
+    p {
+      background-color: rgba(0, 0, 0, 0.616);
+      padding : 20px 60px;
+    }
   }
 </style>
