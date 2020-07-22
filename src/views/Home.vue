@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <router-link to="/play">Jouer</router-link>
+    <Scene/>
   </div>
 </template>
 
@@ -8,11 +9,13 @@
 // @ is an alias to /src
 
 
-
+import Scene from '@/components/Scene.vue';
 
 export default {
   name: 'Home',
-  
+  components: {
+    Scene
+  }, 
 }
 </script>
 
@@ -20,7 +23,7 @@ export default {
 .home {
   margin : 0;
   height: 100vh;
-  background-color: red;
+  background-color: wheat;
 }
 a {
   position: absolute;
