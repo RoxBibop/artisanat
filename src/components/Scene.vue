@@ -38,13 +38,13 @@
       camera.position.set(0, 0, 5);
 
       // adding an ambient light
-      const ambient = new Three.AmbientLight(0x404040, 7);
+      const ambient = new Three.AmbientLight(0x404040, 6);
       scene.add(ambient); 
 
       // adding a light
-      const directionalLight = new Three.DirectionalLight( 0x404040, 1);
-      directionalLight.position.set(15,15,5);
-      scene.add( directionalLight );
+      const light = new Three.HemisphereLight( 0xffffbb, 0x080820, 1.5 );
+      light.position.set(2,2,0);
+      scene.add( light );
 
       // renderer
       renderer = new Three.WebGLRenderer({antialias : true, alpha: true});
@@ -74,7 +74,7 @@
 
       function animateRotate(){
         requestAnimationFrame(animateRotate);
-        planet.rotation.y += 0.02;
+        planet.rotation.y += 0.007;
         renderer.render(scene, camera);
       }
     },
