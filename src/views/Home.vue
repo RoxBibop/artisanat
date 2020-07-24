@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <Curseur ref="cursor"/>
     <router-link to="/play" class="play link">Jouer</router-link>
     <div class="socialLinks">
       <div class="line">
@@ -19,12 +20,19 @@
 <script>
 // @ is an alias to /src
 import Scene from '@/components/Scene.vue';
+import Curseur from '@/components/cursor.vue';
 
 export default {
   name: 'Home',
   components: {
-    Scene
+    Scene,
+    Curseur
   },
+  methods: {
+    cursor: function() {
+      console.log(this.$refs.cursor.$el);
+    }
+  }
 }
 </script>
 
