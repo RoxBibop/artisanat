@@ -21,12 +21,13 @@ export default {
   }
   .awnser {
     top : 50%;
+    pointer-events: none;
     left : 50%;
     transform: translate(-50%, -50%);
     position : absolute;
     font-size: 70px;
     color: rgb(0, 0, 0);
-    z-index: 999;
+    z-index: 9;
   }
   img {
     height : 100%;
