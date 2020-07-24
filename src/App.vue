@@ -4,8 +4,6 @@
   </div>
 </template>
 
-
-
 <style lang="scss">
 @import '@/assets/scss/global.scss';
 #app {
@@ -14,17 +12,5 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #ffffff;
-  // font-family: 'sketch';
 }
-
 </style>
-
-<script>
-export default {
-  methods: {
-  },
-  mounted(){
-    
-  }
-}
-</script>
