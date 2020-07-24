@@ -17,38 +17,6 @@
   color: #ffffff;
   // font-family: 'sketch';
 }
-.cursor 
-{
-  position: absolute;
-  // top: 0;
-  background: transparent;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 1px solid rgb(46, 46, 46);
-  transition: height .2s, width .2s;  
-  transform: translate(-50%, -50%);
-  // z-index: 2;
-}
-.active
-{
-  width: 30px;
-  height: 30px;
-}
-
-.cursor:before
-{
-  content: '';
-  position: absolute;
-  width: 120%;
-  height: 120%;
-  background: transparent;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  border: 1px solid rgb(46, 46, 46, .2);
-}
 
 </style>
 
@@ -84,7 +52,7 @@ export default {
     }
   },
   mounted(){
-    this.cursor();
+    // this.cursor();
   }
 }
 </script>

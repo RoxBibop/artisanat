@@ -1,5 +1,5 @@
 <template>
-  <div class="play">
+  <div class="play" v-on:mousemove="handleCursor">
     <div class="leftCtn">
       <component v-bind:is="leftComponent" class="left"></component>
     </div>
@@ -8,6 +8,7 @@
     </div>
     <question v-bind:questionTxt="laquestion"/>
     <div class="aaaaaa" v-on:click="changeQuestion"></div>    
+    <div class="curssor" ref="cursor"></div>
   </div>
 </template>
 
@@ -35,6 +36,13 @@ export default {
   methods: {
     changeQuestion : function () {
       this.laquestion = "aaaaddddddd";
+    },
+    handleCursor : function(e) {
+      let cursor = this.$refs.cursor;
+
+      cursor.style.top = `${e.y}px`;
+      cursor.style.left = `${e.x}px`;
+
     }
   }
 }
@@ -55,8 +63,16 @@ export default {
     justify-content: center;
   }
 
-
+  .curssor {
+    pointer-events: none;
+    height : 10px;
+    width : 10px; 
+    background-color: white;
+    position: absolute;
+    border-radius: 50%;
+  }
   .play {
+    cursor : none;
     height : 100vh;
     display: flex;
     align-items: center;

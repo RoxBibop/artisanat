@@ -65,12 +65,12 @@
         objloader.load('./3d/earth/earth.obj', function(obj){
           scene.add(obj);
           planet = obj;
-          // animateRotate()
-          renderer.render(scene, camera);
+          animateRotate()
         })
       })
 
       function animateRotate(){
+        renderer.render(scene, camera);
         requestAnimationFrame(animateRotate);
         planet.rotation.y += 0.007;
       }
