@@ -10,7 +10,11 @@ export default {
   name: 'demo1',
   data() {
     return {
-      datas : "dataTest"
+      datas : {
+        left : "question2left",
+        right : "question2right",
+        quest : "comment s'appelle michel ?"
+      }
     }
   },
   methods: {

@@ -7,7 +7,6 @@
       <component v-bind:is="rightComponent" class="right"></component>
     </div>
     <question v-bind:questionTxt="laquestion"/>
-    <div class="aaaaaa" v-on:click="changeQuestion"></div>    
     <div class="curssor" ref="cursor"></div>
   </div>
 </template>
@@ -42,12 +41,11 @@ export default {
   },
 
   methods: {
-    changeQuestion : function () {
-      this.laquestion = "aaaaddddddd";
-    },
     onChildClick (value) {
-      this.fromChild = value;
-      console.log(this.fromChild)
+      this.leftComponent = value.left;
+      this.rightComponent = value.right;
+      this.laquestion = value.quest;
+      console.log(this.leftComponent)
     }
   }
 }
