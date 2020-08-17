@@ -98,10 +98,6 @@ export default {
       margin: 5px 0px ;
       background: rgb(233, 233, 233);
     }
-    .svg-inline--fa:hover
-    {
-      color: red;
-    }
   }
 }
 
