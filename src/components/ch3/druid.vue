@@ -1,7 +1,7 @@
 <template>
-  <div class="isChecking">
+  <div class="druid">
     <div class="text">
-      <p>Vous vous approchez du buisson et fouillez afin de trouver la source du bruit. En vain.</p>
+      <p>TU RENCONTRE UN MONSIEUR</p>
       <p>Certainement votre imagination, ou un petit animal. Rien d'alarmant... Vous reprenez la route<span v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
     </div>
     <Curseur/>
@@ -12,7 +12,7 @@
 import Curseur from '../cursor';
 
 export default {
-  name: 'isChecking',
+  name: 'druid',
   components: {
     Curseur,
   },
@@ -23,7 +23,7 @@ export default {
         right : "",
         quest : "",
         cinematic: true,
-        scene: "druid"
+        scene: "town"
       }
     }
   },
@@ -38,7 +38,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  .isChecking {
+  .druid {
     height : 100vh;
     width : 100%;
     display: flex;

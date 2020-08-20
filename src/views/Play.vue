@@ -30,7 +30,7 @@ import wolf from '../components/town/wolf';
 import thief from '../components/town/thief';
 import town from '../components/town/town';
 import isChecking from '../components/ch2/isChecking';
-
+import druid from '../components/ch3/druid';
 
 export default {
   components: {
@@ -47,7 +47,8 @@ export default {
     wolf, 
     thief,
     town,
-    isChecking
+    isChecking,
+    druid
   },
   data() {
     return {
