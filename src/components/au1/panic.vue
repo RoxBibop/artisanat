@@ -1,21 +1,21 @@
 <template>
-  <div class="auberge"  v-on:click="emitToParent()">
-    <div class="awnser">Je vais à l'auberge</div>
-    <img src="../../assets/inn.png" ref="img" alt="">
+  <div class="panic" v-on:click="emitToParent()">
+    <div class="awnser">... paniqué ?</div>
+    <img src="../../assets/panic.png" ref="img" alt="">
   </div>
 </template>
 
 <script>
 export default {
-  name: 'auberge',
+  name: 'panic',
   data() {
     return {
       datas : {
-        left : "calm",
-        right : "panic",
-        quest : "Arrivé à l'auberge, vous décidez de rentrer... et un silence s'installe. Tout le monde vous fixe du regard d'un air surpris et choqué. L'aubergiste vous demande si vous voulez à boire et à manger. Il faut savoir ou vous vous trouvez. Comment lui demandez vous cela ? De manière ...",
-        scene : "",
-        cinematic: false,
+        left : "",
+        right : "",
+        quest : "",
+        cinematic: true,
+        scene: 'food'
       }
     }
   },
@@ -30,7 +30,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  .auberge {
+  .panic {
     height : 100%;
     width : 100%;
     position: relative;
