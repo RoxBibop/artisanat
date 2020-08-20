@@ -1,13 +1,16 @@
 <template>
-  <div class="play">
+  <div v-if="!cinematic" class="play">
     <div class="leftCtn">
       <component v-on:childToParent="onChildClick" v-bind:is="leftComponent" class="left"></component>
     </div>
     <div class="rightCtn">
-      <component v-bind:is="rightComponent" class="right"></component>
+      <component v-on:childToParent="onChildClick" v-bind:is="rightComponent" class="right"></component>
     </div>
     <question v-bind:questionTxt="laquestion"/>
     <div class="curssor" ref="cursor"></div>
+  </div>
+  <div v-else>
+    <component v-on:childToParent="onChildClick" v-bind:is="scene"></component>
   </div>
 </template>
 
@@ -20,23 +23,37 @@ import question2left from '../components/question2/question2left';
 import question2right from '../components/question2/question2right';
 import question3left from '../components/question3/question3left';
 import question3right from '../components/question3/question3right';
+import panic from '../components/au1/panic';
+import calm from '../components/au1/calm';
+import food from '../components/au2/food';
+import wolf from '../components/town/wolf';
+import thief from '../components/town/thief';
+import town from '../components/town/town';
 
 export default {
   components: {
     question,
     chemin,
     auberge,
+    calm,
+    panic,
     question2left,
     question2right,
     question3left,
-    question3right
+    question3right,
+    food,
+    wolf, 
+    thief,
+    town
   },
   data() {
     return {
       laquestion : "Est-ce que tu vas à l'auberge ou est-ce que tu t'aventures dans le chemin ?",
       leftComponent : "chemin",
       rightComponent : "auberge",
-      fromChild : ""
+      fromChild : "",
+      cinematic: false,
+      scene:""
     }
   },
 
@@ -45,7 +62,9 @@ export default {
       this.leftComponent = value.left;
       this.rightComponent = value.right;
       this.laquestion = value.quest;
-      console.log(this.leftComponent)
+      this.cinematic = value.cinematic;
+      this.scene = value.scene;
+      console.log(this.scene, this.cinematic);
     }
   }
 }

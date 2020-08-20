@@ -12,7 +12,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border: 1px solid rgb(46, 46, 46);
+  border: 1px solid rgb(245, 4, 4);
   transition: height .2s, width .2s;  
   transform: translate(-50%, -50%);
   pointer-events: none;
