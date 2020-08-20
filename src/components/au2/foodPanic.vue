@@ -1,9 +1,12 @@
 <template>
   <div class="food">
-    <p>bite</p>
-    <button v-on:click="emitToParent()">Continuez</button>
-    <img src="../../assets/food.jpg" ref="img" alt="">
-    <Curseur/>
+    <div class="text">
+      <p>"Hey calme toi mon gars! Déstresse !
+      T'as pas l'air du coin toi ! <br>
+      Prends un peu d'pain et une chope de bière ca te calmera...!
+      <br>C'est tout ce que je peux faire pour toi mon ami..." 
+      <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
+    </div>
   </div>
 </template>
 
@@ -11,7 +14,7 @@
 import Curseur from '../cursor';
 
 export default {
-  name: 'food',
+  name: 'foodPanic',
   components: {
     Curseur,
   },
@@ -22,7 +25,7 @@ export default {
         right : "",
         quest : "",
         cinematic: true,
-        scene: "town"
+        scene: "meet"
       }
     }
   },
@@ -37,33 +40,13 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   .food {
-    height : 100%;
+    height : 100vh;
     width : 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  p{
-    position: absolute;
-    margin: 0
-  }
-  .awnser {
-    pointer-events: none;
-    position : absolute;
-    font-size: 30px;
-    z-index: 9;
-    padding : 10px 20px;
-    color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  img {
-    height : 100%;
-    width : 100%;
-    object-fit: cover;
-    transition: .3s;
-  }
-  button{
-    cursor: none;
-    position: absolute;
+    background-image: url("../../assets/innkeeper.jpeg");
+    background-size: cover;
+    background-position: (0 60%);
   }
 </style>

@@ -3,13 +3,39 @@
   src: url("/police/Sketch\ 3D.otf");
 }
 
-body
-{
+body {
   overflow: hidden;
-  cursor: none;
+}
+.text {
+  position : absolute;
+  font-size: 22px;
+  z-index: 9999;
+  text-align: left;
+  padding : 10px 50px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.arrowBtn {
+  position: absolute;
+  right : 30px;
+  cursor: pointer;
+  bottom : -10px;
+  transform : translate(0, -62%);
+  margin-left: 10px;
+  margin-top: 20px;
+  font-size: 30px;
+  animation-name: slidein;
+  animation-duration: .6s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
 }
 
-a
-{
-  cursor: none;
+
+@keyframes slidein {
+  from {
+    transform: translate(0, -62%);
+  }
+  to {
+    transform: translate(6px, -62%);
+  }
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="thief">
-    <div class="awnser">thief</div>
+    <div class="awnser">... voleurs</div>
     <img src="../../assets/thief.jpg" ref="img" alt="">
   </div>
 </template>
@@ -29,7 +29,7 @@ export default {
     height : 100%;
     width : 100%;
     position: relative;
-    background: red;
+    background: rgb(10, 10, 10)(17, 17, 17);
   }
   .awnser {
     top : 50%;

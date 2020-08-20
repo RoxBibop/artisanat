@@ -24,6 +24,7 @@ export default {
     p {
       background-color: rgba(0, 0, 0, 0.616);
       padding : 20px 60px;
+      font-size: 23px;
     }
   }
 </style>

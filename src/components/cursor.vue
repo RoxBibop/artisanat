@@ -6,13 +6,14 @@
 @import '@/assets/scss/global.scss';
 .cursor 
 {
+  display: none;
   z-index: 99999999999999999999;
   position: absolute;
-  background: transparent;
+  background: white;
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border: 1px solid rgb(245, 4, 4);
+  border: 1px solid rgb(255, 255, 255);
   transition: height .2s, width .2s;  
   transform: translate(-50%, -50%);
   pointer-events: none;

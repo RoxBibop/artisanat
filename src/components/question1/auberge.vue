@@ -1,6 +1,6 @@
 <template>
   <div class="auberge"  v-on:click="emitToParent()">
-    <div class="awnser">Je vais à l'auberge</div>
+    <div class="awnser">Vous vous dirigez vers l'auberge</div>
     <img src="../../assets/inn.png" ref="img" alt="">
   </div>
 </template>
@@ -11,11 +11,11 @@ export default {
   data() {
     return {
       datas : {
-        left : "calm",
-        right : "panic",
-        quest : "Arrivé à l'auberge, vous décidez de rentrer... et un silence s'installe. Tout le monde vous fixe du regard d'un air surpris et choqué. L'aubergiste vous demande si vous voulez à boire et à manger. Il faut savoir ou vous vous trouvez. Comment lui demandez vous cela ? De manière ...",
-        scene : "",
-        cinematic: false,
+        left : "",
+        right : "",
+        quest : "",
+        scene : "welcInn",
+        cinematic: true,
       }
     }
   },
@@ -41,11 +41,11 @@ export default {
     left : 50%;
     transform: translate(-50%, -50%);
     position : absolute;
-    z-index: 9;
-    padding : 10px 20px;
-    font-size: 30px;
+    font-size: 18px;
     color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+    background-color: rgba(0, 0, 0, 0.616);
+    padding : 20px 60px;
   }
   img {
     height : 100%;

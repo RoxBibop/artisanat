@@ -1,5 +1,5 @@
 <template>
-  <div class="nocheck">
+  <div class="nocheck" v-on:click="emitToParent()">
     <div class="awnser">Probablement juste un petit animal, vous ignorez le bruit et continuez votre chemin</div>
     <img src="../../assets/nocheck.jpeg" ref="img" alt="">
   </div>
@@ -8,6 +8,22 @@
 <script>
 export default {
   name: 'nocheck',
+  data() {
+    return {
+      datas : {
+        left : "",
+        right : "",
+        quest : "",
+        cinematic: true,
+        scene: "meet"
+      }
+    }
+  },
+  methods: {
+    emitToParent () {
+      this.$emit('childToParent', this.datas)
+    }
+  }
 }
   
 </script>

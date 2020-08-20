@@ -1,6 +1,6 @@
 <template>
   <div class="chemin" v-on:click="emitToParent()">
-    <div class="awnser">Je m'aventure dans le chemin</div>
+    <div class="awnser">Vous vous aventurez dans le chemin</div>
     <img src="../../assets/chemin.jpg" alt="">
   </div>
 </template>
@@ -37,12 +37,12 @@ export default {
   .awnser {
     pointer-events: none;
     position : absolute;
-    font-size: 30px;
+    font-size: 18px;
     z-index: 9;
-    padding : 10px 20px;
-    color: rgb(255, 255, 255);
+    padding : 20px 60px;
     background-color: rgba(0, 0, 0, 0.5);
   }
+
   img {
     height : 100%;
     width : 100%;

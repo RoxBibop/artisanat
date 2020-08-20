@@ -16,43 +16,49 @@
 
 <script>
 
-import question from '../components/question';
-import chemin from '../components/question1/chemin';
 import auberge from '../components/question1/auberge';
-import check from '../components/ch1/check';
-import nocheck from '../components/ch1/nocheck';
-import question3left from '../components/question3/question3left';
-import question3right from '../components/question3/question3right';
-import panic from '../components/au1/panic';
 import calm from '../components/au1/calm';
-import food from '../components/au2/food';
-import wolf from '../components/town/wolf';
+import check from '../components/ch1/check';
+import chemin from '../components/question1/chemin';
+import foodCalm from '../components/au2/foodCalm';
+import foodPanic from '../components/au2/foodPanic';
+import isChecking from '../components/ch2/isChecking';
+import meet from '../components/meet';
+import meet2 from '../components/meet2';
+import nocheck from '../components/ch1/nocheck';
+import panic from '../components/au1/panic';
+import question from '../components/question';
 import thief from '../components/town/thief';
 import town from '../components/town/town';
-import isChecking from '../components/ch2/isChecking';
-import druid from '../components/ch3/druid';
+import town2 from '../components/town/town2';
+import welcInn from '../components/au1/welcInn';
+import welcInn2 from '../components/au1/welcInn2';
+import wolf from '../components/town/wolf';
 
 export default {
   components: {
-    question,
-    chemin,
     auberge,
-    check,
-    nocheck,
     calm,
+    check,
+    chemin,
+    foodCalm,
+    foodPanic,
+    isChecking,
+    meet,
+    meet2,
+    nocheck,
     panic,
-    question3left,
-    question3right,
-    food,
-    wolf, 
+    question,
     thief,
     town,
-    isChecking,
-    druid
+    town2,
+    welcInn,
+    welcInn2,
+    wolf
   },
   data() {
     return {
-      laquestion : "Est-ce que tu vas à l'auberge ou est-ce que tu t'aventures dans le chemin ?",
+      laquestion : "Sur votre gauche, vous aperçevez un chemin qui semble mener à la sortie de la fôret. Sur votre droite, ce qui semble être une auberge.",
       leftComponent : "chemin",
       rightComponent : "auberge",
       fromChild : "",
@@ -68,7 +74,6 @@ export default {
       this.laquestion = value.quest;
       this.cinematic = value.cinematic;
       this.scene = value.scene;
-      console.log(this.scene, this.cinematic);
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="panic" v-on:click="emitToParent()">
-    <div class="awnser">... paniqué ?</div>
+    <div class="awnser">paniquée</div>
     <img src="../../assets/panic.png" ref="img" alt="">
   </div>
 </template>
@@ -15,7 +15,7 @@ export default {
         right : "",
         quest : "",
         cinematic: true,
-        scene: 'food'
+        scene: 'foodPanic'
       }
     }
   },

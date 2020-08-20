@@ -1,6 +1,6 @@
 <template>
   <div class="calm" v-on:click="emitToParent()">
-    <div class="awnser">...calme ?</div>
+    <div class="awnser">calme</div>
     <img src="../../assets/calm.jpg" ref="img" alt="">
   </div>
 </template>
@@ -15,7 +15,7 @@ export default {
         right : "",
         quest : "",
         cinematic: true,
-        scene: "food"
+        scene: "foodCalm"
       }
     }
   },
