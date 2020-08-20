@@ -1,5 +1,5 @@
 <template>
-  <div class="check">
+  <div class="check" v-on:click="emitToParent()">
     <div class="awnser">Vous décidez de vous arrêter et d'inspecter le buisson</div>
     <img src="../../assets/check.jpeg" ref="img" alt="">
   </div>
@@ -8,6 +8,22 @@
 <script>
 export default {
   name: 'check',
+  data() {
+    return {
+      datas : {
+        left : "",
+        right : "",
+        quest : "",
+        cinematic: true,
+        scene: "isChecking"
+      }
+    }
+  },
+  methods: {
+    emitToParent () {
+      this.$emit('childToParent', this.datas)
+    }
+  }
 }
   
 </script>

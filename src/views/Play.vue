@@ -29,6 +29,8 @@ import food from '../components/au2/food';
 import wolf from '../components/town/wolf';
 import thief from '../components/town/thief';
 import town from '../components/town/town';
+import isChecking from '../components/ch2/isChecking';
+
 
 export default {
   components: {
@@ -39,14 +41,13 @@ export default {
     nocheck,
     calm,
     panic,
-    question2left,
-    question2right,
     question3left,
     question3right,
     food,
     wolf, 
     thief,
-    town
+    town,
+    isChecking
   },
   data() {
     return {
