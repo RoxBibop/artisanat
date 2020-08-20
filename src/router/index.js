@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import IntroGame from '../views/IntroGame.vue';
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,13 @@ Vue.use(VueRouter)
     name: 'Play',
     component: function () {
       return import('../views/Play.vue')
+    }
+  },
+  {
+    path: '/intro',
+    name: 'Intro',
+    component: function () {
+      return import('../views/IntroGame.vue')
     }
   },
 ]

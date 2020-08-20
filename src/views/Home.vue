@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <Curseur ref="cursor"/>
-    <router-link to="/play" class="play link">Jouer</router-link>
+    <Curseur/>
+    <router-link to="/intro" class="play link">Jouer</router-link>
     <div class="socialLinks">
       <div class="line">
         <div></div>
@@ -29,9 +29,6 @@ export default {
     Curseur
   },
   methods: {
-    cursor: function() {
-      console.log(this.$refs.cursor.$el);
-    }
   }
 }
 </script>
@@ -43,6 +40,7 @@ export default {
   height: 100vh;
   background-color: rgb(233, 233, 233);
 }
+
 .play {
   position: absolute;
   bottom : 1%;
@@ -54,7 +52,6 @@ export default {
   font-family: 'sketch';
   font-size: 55px;
 }
-
 .socialLinks
 {
   // z-index: 1;
