@@ -1,20 +1,20 @@
 <template>
-  <div class="question2left">
-    <div class="awnser">C</div>
-    <img src="https://picsum.photos/801/800" ref="img" alt="">
+  <div class="nocheck">
+    <div class="awnser">Probablement juste un petit animal, vous ignorez le bruit et continuez votre chemin</div>
+    <img src="../../assets/nocheck.jpeg" ref="img" alt="">
   </div>
 </template>
 
 <script>
 export default {
-  name: 'question2left',
+  name: 'nocheck',
 }
   
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  .question2left {
+  .nocheck {
     height : 100%;
     width : 100%;
     position: relative;
@@ -25,9 +25,11 @@ export default {
     left : 50%;
     transform: translate(-50%, -50%);
     position : absolute;
-    font-size: 70px;
-    color: rgb(0, 0, 0);
+    font-size: 18px;
+    color: rgb(255, 255, 255);
     z-index: 9;
+    background-color: rgba(0, 0, 0, 0.616);
+    padding : 20px 60px;
   }
   img {
     height : 100%;

@@ -11,9 +11,9 @@ export default {
   data() {
     return {
       datas : {
-        left : "question2left",
-        right : "question2right",
-        quest : "comment s'appelle michel ?"
+        left : "check",
+        right : "nocheck",
+        quest : "Vous vous aventurez dans le chemin, et entendez soudain un son suspect semblant provenir d'un buisson à vos pieds."
       }
     }
   },

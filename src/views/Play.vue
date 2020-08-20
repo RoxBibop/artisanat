@@ -16,8 +16,8 @@
 import question from '../components/question';
 import chemin from '../components/question1/chemin';
 import auberge from '../components/question1/auberge';
-import question2left from '../components/question2/question2left';
-import question2right from '../components/question2/question2right';
+import check from '../components/ch1/check';
+import nocheck from '../components/ch1/nocheck';
 import question3left from '../components/question3/question3left';
 import question3right from '../components/question3/question3right';
 
@@ -26,8 +26,8 @@ export default {
     question,
     chemin,
     auberge,
-    question2left,
-    question2right,
+    check,
+    nocheck,
     question3left,
     question3right
   },
