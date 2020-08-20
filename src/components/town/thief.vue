@@ -1,6 +1,6 @@
 <template>
   <div class="thief">
-    <div class="awnser">thief</div>
+    <div class="awnser">... voleurs</div>
     <img src="../../assets/thief.jpg" ref="img" alt="">
   </div>
 </template>

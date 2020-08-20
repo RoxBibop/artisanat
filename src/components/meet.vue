@@ -1,17 +1,17 @@
 <template>
-  <div class="food">
-    <p>bite</p>
+  <div class="meet">
+    <p>Apres avoir eu vent de l'endroit ou vous vous situez, vous decidez de continuez votre route. Vous faites la rencontre d'un vieil homme... il vous demandes "Vous êtes perdus mon ami ? Ca se voit, j'ai la solution a votre problème. Donnez moi 500 pièces d'or et je pourrais vous offrir l'opportunité d'un voyage de retour. Allez en ville un peu plus loin et vous aurez sans doute une ou deux opportunités d'amasser cet or..."<br/>Après un bâtement de cils, le viel homme s'est volatilisé. Étant votre seule chance, vous décidez d'aller en ville pour gagner cet or.</p>
     <button v-on:click="emitToParent()">Continuez</button>
-    <img src="../../assets/food.jpg" ref="img" alt="">
+    <img src="../assets/meet.jpg" ref="img" alt="">
     <Curseur/>
   </div>
 </template>
 
 <script>
-import Curseur from '../cursor';
+import Curseur from './cursor';
 
 export default {
-  name: 'food',
+  name: 'meet',
   components: {
     Curseur,
   },
@@ -36,7 +36,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  .food {
+  .meet {
     height : 100%;
     width : 100%;
     display: flex;
@@ -45,7 +45,7 @@ export default {
   }
   p{
     position: absolute;
-    margin: 0
+    top: 0
   }
   .awnser {
     pointer-events: none;

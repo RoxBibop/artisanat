@@ -11,11 +11,11 @@ export default {
   data() {
     return {
       datas : {
-        left : "calm",
-        right : "panic",
-        quest : "Arrivé à l'auberge, vous décidez de rentrer... et un silence s'installe. Tout le monde vous fixe du regard d'un air surpris et choqué. L'aubergiste vous demande si vous voulez à boire et à manger. Il faut savoir ou vous vous trouvez. Comment lui demandez vous cela ? De manière ...",
-        scene : "",
-        cinematic: false,
+        left : "",
+        right : "",
+        quest : "",
+        scene : "welcInn",
+        cinematic: true,
       }
     }
   },

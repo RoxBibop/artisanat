@@ -23,12 +23,15 @@ import check from '../components/ch1/check';
 import nocheck from '../components/ch1/nocheck';
 import question3left from '../components/question3/question3left';
 import question3right from '../components/question3/question3right';
+import welcInn from '../components/au1/welcInn';
 import panic from '../components/au1/panic';
 import calm from '../components/au1/calm';
-import food from '../components/au2/food';
+import foodCalm from '../components/au2/foodCalm';
+import foodPanic from '../components/au2/foodPanic';
 import wolf from '../components/town/wolf';
 import thief from '../components/town/thief';
 import town from '../components/town/town';
+import meet from '../components/meet';
 import isChecking from '../components/ch2/isChecking';
 
 
@@ -43,10 +46,13 @@ export default {
     panic,
     question3left,
     question3right,
-    food,
+    foodCalm,
+    foodPanic,
     wolf, 
+    meet,
     thief,
     town,
+    welcInn,
     isChecking
   },
   data() {
