@@ -14,8 +14,8 @@
 <script>
 
 import question from '../components/question';
-import demo1 from '../components/question1/demo1';
-import demo2 from '../components/question1/demo2';
+import chemin from '../components/question1/chemin';
+import auberge from '../components/question1/auberge';
 import question2left from '../components/question2/question2left';
 import question2right from '../components/question2/question2right';
 import question3left from '../components/question3/question3left';
@@ -24,8 +24,8 @@ import question3right from '../components/question3/question3right';
 export default {
   components: {
     question,
-    demo1,
-    demo2,
+    chemin,
+    auberge,
     question2left,
     question2right,
     question3left,
@@ -33,9 +33,9 @@ export default {
   },
   data() {
     return {
-      laquestion : "sdfsfdsfdsfdsfdsf klkdsjf skdjf sjf ssdfkj lkzjfkjz",
-      leftComponent : "demo1",
-      rightComponent : "demo2",
+      laquestion : "Est-ce que tu vas à l'auberge ou est-ce que tu t'aventures dans le chemin ?",
+      leftComponent : "chemin",
+      rightComponent : "auberge",
       fromChild : ""
     }
   },
