@@ -2,9 +2,7 @@
   <div class="intro">
     <Curseur ref="cursor"/>
     <p class="text">
-      Sans trop savoir comment vous en êtes arrivés là, vous vous reveillez au coeur d'une forêt dans une époque qui semble différente de la votre et vêtu étrangement.<br>
-      Vous allez tout tenter pour rentrer chez vous, à votre époque. <br>
-      Mais la première chose à faire, c'est probablement de sortir de cette forêt...
+      {{texte}}
       <span class="arrowBtn" v-on:click="emitToParent()">    <router-link to="/play" class="play link"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></router-link></span></p>
     <img src="../assets/intro.jpg" ref="img" alt="">
 
@@ -18,6 +16,30 @@
     components: {
       Curseur,
     },
+    data : function() {
+      return {
+        texte: "",
+        x: 0,
+      }
+    },
+    methods : {
+      isReady() {
+        console.log("is rendered")
+      },
+      typeWriter() {
+        let textEffect = "Sans trop savoir comment vous en êtes arrivés là, vous vous reveillez au coeur d'une forêt dans une époque qui semble différente de la votre et vêtu étrangement. Vous allez tout tenter pour rentrer chez vous, à votre époque. Mais la première chose à faire, c'est probablement de sortir de cette forêt..."
+
+        if (this.x < textEffect.length) {
+          this.texte += textEffect.charAt(this.x);
+          this.x++;
+          setTimeout(this.typeWriter, 40);
+        }
+      }
+    },
+    mounted() {
+      this.isReady();
+      this.typeWriter();
+    }
   }
 </script>
 

@@ -42,6 +42,9 @@ import goodCons from '../components/wolf/goodCons';
 import badCons from '../components/wolf/badCons';
 import congrats from '../components/wolf/congrats';
 import angryPeasants from '../components/wolf/angryPeasants';
+import meetthief from '../components/thief/meetthief';
+import help from '../components/thief/help';
+import steal from '../components/thief/steal';
 
 export default {
   components: {
@@ -70,7 +73,10 @@ export default {
     goodCons,
     badCons,
     congrats,
-    angryPeasants
+    angryPeasants,
+    meetthief,
+    help,
+    steal
   },
   data() {
     return {

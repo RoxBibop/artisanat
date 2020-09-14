@@ -1,13 +1,13 @@
 <template>
-  <div class="thief" v-on:click="emitToParent()">
-    <div class="awnser">... voleurs</div>
-    <img src="../../assets/thief.jpg" ref="img" alt="">
+  <div class="steal" v-on:click="emitToParent()">
+    <div class="awnser">Vous décidez de ne pas les suivre, et tentez de dérober l'un des sacs avant de partir.</div>
+    <img src="../../assets/steal.jpg" ref="img" alt="">
   </div>
 </template>
 
 <script>
 export default {
-  name: 'thief',
+  name: 'steal',
   data() {
     return {
       datas : {
@@ -15,7 +15,7 @@ export default {
         right : "",
         quest : "",
         cinematic: true,
-        scene: "meetthief"
+        scene: "pasor"
       }
     }
   },
@@ -30,7 +30,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  .thief {
+  .steal {
     height : 100%;
     width : 100%;
     position: relative;
@@ -44,7 +44,7 @@ export default {
     position : absolute;
     z-index: 9;
     padding : 10px 20px;
-    font-size: 30px;
+    font-size: 24px;
     color: rgb(255, 255, 255);
     background-color: rgba(0, 0, 0, 0.5);
   }
