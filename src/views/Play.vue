@@ -34,6 +34,14 @@ import town2 from '../components/town/town2';
 import welcInn from '../components/au1/welcInn';
 import welcInn2 from '../components/au1/welcInn2';
 import wolf from '../components/town/wolf';
+import peasant from '../components/wolf/peasant';
+import wolfAttack from '../components/wolf/wolfAttack';
+import brave from '../components/wolf/brave';
+import coward from '../components/wolf/coward';
+import goodCons from '../components/wolf/goodCons';
+import badCons from '../components/wolf/badCons';
+import congrats from '../components/wolf/congrats';
+import angryPeasants from '../components/wolf/angryPeasants';
 
 export default {
   components: {
@@ -54,7 +62,15 @@ export default {
     town2,
     welcInn,
     welcInn2,
-    wolf
+    wolf,
+    peasant,
+    wolfAttack,
+    brave,
+    coward,
+    goodCons,
+    badCons,
+    congrats,
+    angryPeasants
   },
   data() {
     return {

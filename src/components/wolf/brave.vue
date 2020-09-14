@@ -1,13 +1,13 @@
 <template>
-  <div class="wolf" v-on:click="emitToParent()">
-    <div class="awnser">... loups</div>
-    <img src="../../assets/wolf.jpg" ref="img" alt="">
+  <div class="brave" v-on:click="emitToParent()">
+    <div class="awnser">D'attaquer le loup</div>
+    <img src="../../assets/brave.jpg" ref="img" alt="">
   </div>
 </template>
 
 <script>
 export default {
-  name: 'wolf',
+  name: 'brave',
   data() {
     return {
       datas : {
@@ -15,7 +15,7 @@ export default {
         right : "",
         quest : "",
         cinematic: true,
-        scene: "peasant"
+        scene: "goodCons"
       }
     }
   },
@@ -30,11 +30,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  .wolf {
+  .brave {
     height : 100%;
     width : 100%;
     position: relative;
-    background: blue
+    background: rgb(10, 10, 10)(17, 17, 17);
   }
   .awnser {
     top : 50%;

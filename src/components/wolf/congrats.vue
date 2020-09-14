@@ -1,9 +1,6 @@
 <template>
-  <div class="food">
-    <p class="text">"Tu m'as l'air sympa toi!<br>
-        Hélàs je peux pas vraiment t'aider là.
-        Allez, je t'offre un repas chaud et une bière,
-    <br>c'est tout ce que je peux faire pour toi mon ami..." 
+  <div class="congrats">
+    <p class="text">... ils te félicitent pour ta bravoure et soignent tes plaies et te nourrissent dans la joie avant de repartir chercher ton or.
     <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
   </div>
 </template>
@@ -12,7 +9,7 @@
 import Curseur from '../cursor';
 
 export default {
-  name: 'foodCalm',
+  name: 'congrats',
   components: {
     Curseur,
   },
@@ -23,7 +20,7 @@ export default {
         right : "",
         quest : "",
         cinematic: true,
-        scene: "meet"
+        scene: "takeGold"
       }
     }
   },
@@ -37,13 +34,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  .food {
+  .congrats {
     height : 100vh;
     width : 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("../../assets/innkeeper.jpeg");
+    background-image: url("../../assets/congrats.jpg");
     background-size: cover;
     background-position: (0 60%);
   }
