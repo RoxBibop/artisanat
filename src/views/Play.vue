@@ -45,6 +45,7 @@ import angryPeasants from '../components/wolf/angryPeasants';
 import meetthief from '../components/thief/meetthief';
 import help from '../components/thief/help';
 import steal from '../components/thief/steal';
+import goodConsThief from '../components/thief/goodConsThief';
 import takeGold from '../components/takeGold';
 import noTakeGold from '../components/noTakeGold';
 import ritual from '../components/ritual';
@@ -85,6 +86,7 @@ export default {
     meetthief,
     help,
     steal,
+    goodConsThief,
     takeGold,
     noTakeGold,
     negociate,

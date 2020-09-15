@@ -1,24 +1,26 @@
 <template>
-  <div class="takeGold">
-    <p class="text">Tu retournes sur le lieu de ta recontre avec l'étrange personnage, il t'y attends déjà. Tu peux voir une satisfaction sur son visage lorsque tu lui donnes l'or.
+  <div class="goodConsThief">
+    <p class="text">Vous rentrez de votre mission les poches pleines, et célébrez votre butin avec les voleurs, ils vous donnent votre part !
     <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
   </div>
 </template>
 
 <script>
+import Curseur from '../cursor';
 
 export default {
-  name: 'takeGold',
+  name: 'goodConsThief',
   components: {
+    Curseur,
   },
   data() {
     return {
       datas: {
-        left : "leave",
-        right : "stayGold",
-        quest : "Tu as comme une joie immense, mais au fond de toi cet endroit et cette aventure t'ont profondément marqué. Que décides tu de faire ?",
-        cinematic: false,
-        scene: ""
+        left : "",
+        right : "",
+        quest : "",
+        cinematic: true,
+        scene: "takeGold"
       }
     }
   },
@@ -32,18 +34,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  .takeGold {
+  .goodConsThief {
     height : 100vh;
     width : 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("../assets/druid.png");
+    background-image: url("../../assets/congrats.jpg");
     background-size: cover;
     background-position: (0 60%);
   }
   .text {
     width : 70%;
-    padding : 30px 30px;
+    padding : 20px 0px 50px 30px;
   }
 </style>
