@@ -46,6 +46,13 @@ import meetthief from '../components/thief/meetthief';
 import help from '../components/thief/help';
 import steal from '../components/thief/steal';
 import goodConsThief from '../components/thief/goodConsThief';
+import takeGold from '../components/takeGold';
+import noTakeGold from '../components/noTakeGold';
+import ritual from '../components/ritual';
+import stayGold from '../components/consequences/stayGold';
+import leave from '../components/consequences/leave';
+import stay from '../components/consequences/stay';
+import negociate from '../components/consequences/negociate';
 
 
 export default {
@@ -79,7 +86,13 @@ export default {
     meetthief,
     help,
     steal,
-    goodConsThief
+    goodConsThief,
+    takeGold,
+    noTakeGold,
+    negociate,
+    stay,
+    stayGold,
+    leave
   },
   data() {
     return {

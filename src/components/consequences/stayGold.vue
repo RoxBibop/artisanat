@@ -1,21 +1,21 @@
 <template>
-  <div class="coward" v-on:click="emitToParent()">
-    <div class="awnser">De rester caché</div>
-    <img src="../../assets/coward.jpg" ref="img" alt="">
+  <div class="stayGold"  v-on:click="emitToParent()">
+    <div class="awnser">Tu décides après un temps de reflexion de rester, cet endroit te plaît bien et tu veux t'y aventurer avec l'aide de l'or que tu as récolté.</div>
+    <img src="../../assets/inn.png" ref="img" alt="">
   </div>
 </template>
 
 <script>
 export default {
-  name: 'coward',
+  name: 'stayGold',
   data() {
     return {
       datas : {
         left : "",
         right : "",
         quest : "",
+        scene : "",
         cinematic: true,
-        scene: "badCons"
       }
     }
   },
@@ -30,11 +30,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  .coward {
+  .stayGold {
     height : 100%;
     width : 100%;
     position: relative;
-    background: rgb(10, 10, 10)(17, 17, 17);
   }
   .awnser {
     top : 50%;
@@ -42,11 +41,11 @@ export default {
     left : 50%;
     transform: translate(-50%, -50%);
     position : absolute;
-    z-index: 9;
-    padding : 10px 20px;
-    font-size: 30px;
+    font-size: 18px;
     color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+    background-color: rgba(0, 0, 0, 0.616);
+    padding : 20px 60px;
   }
   img {
     height : 100%;

@@ -20,7 +20,7 @@ export default {
         right : "",
         quest : "",
         cinematic: true,
-        scene: "gold"
+        scene: "takeGold"
       }
     }
   },
