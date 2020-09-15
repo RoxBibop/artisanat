@@ -1,17 +1,15 @@
 <template>
-  <div class="congrats">
-    <p class="text">... ils te félicitent pour ta bravoure et soignent tes plaies et te nourrissent dans la joie avant de repartir chercher ton or afin de retourner voir le mystérieux personnage.
+  <div class="ritual">
+    <p class="text">Finalement tu veux revoir ton monde... tu fais part de cette décision au druide... Après quelques secondes d'incantation dans un langage complètement inconnue à tes yeux, un portail s'ouvre et tu peux entre apercevoir... ta maison!
     <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
   </div>
 </template>
 
 <script>
-import Curseur from '../cursor';
 
 export default {
-  name: 'congrats',
+  name: 'ritual',
   components: {
-    Curseur,
   },
   data() {
     return {
@@ -20,7 +18,7 @@ export default {
         right : "",
         quest : "",
         cinematic: true,
-        scene: "takeGold"
+        scene: ""
       }
     }
   },
@@ -34,13 +32,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  .congrats {
+  .ritual {
     height : 100vh;
     width : 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("../../assets/congrats.jpg");
+    background-image: url("../assets/portal.jpg");
     background-size: cover;
     background-position: (0 60%);
   }

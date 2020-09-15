@@ -1,26 +1,24 @@
 <template>
-  <div class="congrats">
-    <p class="text">... ils te félicitent pour ta bravoure et soignent tes plaies et te nourrissent dans la joie avant de repartir chercher ton or afin de retourner voir le mystérieux personnage.
+  <div class="takeGold">
+    <p class="text">Tu as réussi a récupérer l'or tant espéré. Tu retournes vers le lieu de la rencontre et celui qui semble être un druide, t'y attends déjà. Tu peux voir une satisfaction sur son visage.
     <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
   </div>
 </template>
 
 <script>
-import Curseur from '../cursor';
 
 export default {
-  name: 'congrats',
+  name: 'takeGold',
   components: {
-    Curseur,
   },
   data() {
     return {
       datas: {
-        left : "",
-        right : "",
-        quest : "",
-        cinematic: true,
-        scene: "takeGold"
+        left : "leave",
+        right : "stayGold",
+        quest : "Tu as comme une joie immense, mais au fond de toi cet endroit et cette aventure t'as profondément marquée. Que décides tu de faire ?",
+        cinematic: false,
+        scene: ""
       }
     }
   },
@@ -34,13 +32,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  .congrats {
+  .takeGold {
     height : 100vh;
     width : 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("../../assets/congrats.jpg");
+    background-image: url("../assets/druid.png");
     background-size: cover;
     background-position: (0 60%);
   }

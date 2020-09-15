@@ -1,6 +1,6 @@
 <template>
   <div class="angryPeasants">
-    <p class="text">Malheureusement il y a eu des témoins de ta lacheté... Les fermiers te regardent d'un regard sombre et effrayant... tu ne te poses plus de questions, tu décides de partir d'ici et de repartir en ville.
+    <p class="text">Malheureusement il y a eu des témoins de ta lacheté... Les fermiers te regardent d'un regard sombre et effrayant... tu ne te poses plus de questions, tu décides de partir d'ici et de retourner sur le lieu de rencontre avec le mystérieux personnage sans l'or.
     <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
         right : "",
         quest : "",
         cinematic: true,
-        scene: "takeGold"
+        scene: "noTakeGold"
       }
     }
   },
