@@ -16,7 +16,7 @@ export default {
       datas: {
         left : "stay",
         right : "negociate",
-        quest : "Le druide se calme après un instant de reflexion, il te propose une option, \"Je te proposes de rester ici afin de pouvoir devenir mon disciple et de m'aider dans mes tâches, ainsi tu pourras à l'avenir revenir chez toi... Qu'en penses-tu ?\"",
+        quest : "Le druide se calme après un instant de reflexion, il te propose quelque chose: \"Je te proposes de rester ici afin de pouvoir devenir mon disciple et de m'aider dans mes tâches, ainsi tu pourras rentrer chez toi... Qu'en penses-tu ?\"",
         cinematic: false,
         scene: ""
       }
