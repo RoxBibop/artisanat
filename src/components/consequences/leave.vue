@@ -53,7 +53,6 @@ export default {
     object-fit: cover;
     transition: .3s;
   }
-
   img:hover{
     transform: scale(1.2)
   }

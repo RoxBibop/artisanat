@@ -42,7 +42,7 @@ export default {
     background-size: cover;
     background-position: (0 60%);
   }
-  .text {
-    padding : 30px 30px;
+ .text {
+    padding : 10px 50px 30px 50px;
   }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="congrats">
-    <p class="text">... ils te félicitent pour ta bravoure et soignent tes plaies et te nourrissent dans la joie avant de repartir chercher ton or afin de retourner voir le mystérieux personnage.
+    <p class="text">... ils te félicitent pour ta bravoure, soignent tes plaies et te nourrissent. Tu pars chercher<br> ton or afin de retourner sur le lieu de la rencontre avec le mystérieux personnage.
     <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
   </div>
 </template>
@@ -45,6 +45,6 @@ export default {
     background-position: (0 60%);
   }
   .text {
-    padding : 30px 30px;
+    padding : 10px 50px 30px 50px;
   }
 </style>
