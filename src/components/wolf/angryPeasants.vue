@@ -1,6 +1,6 @@
 <template>
   <div class="angryPeasants">
-    <p class="text">Malheureusement il y a eu des témoins de ta lacheté... Les fermiers te regardent d'un regard sombre et effrayant... tu ne te poses plus de questions, tu décides de partir d'ici et de retourner sur le lieu de rencontre avec le mystérieux personnage sans l'or.
+    <p class="text">Malheureusement il y a eu des témoins de ta lacheté... Les fermiers te regardent d'un regard sombre et effrayant...<br> tu ne te poses plus de questions, tu décides de partir d'ici et de retourner sur le lieu de rencontre avec le mystérieux <br>personnage sans l'or.
     <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
   </div>
 </template>
@@ -45,6 +45,6 @@ export default {
     background-position: (0 60%);
   }
   .text {
-    padding : 30px 30px;
+    padding : 10px 50px 30px 50px;
   }
 </style>

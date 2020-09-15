@@ -1,6 +1,6 @@
 <template>
   <div class="noTakeGold">
-    <p class="text">Tu n'as pas réussi a récupérer l'or tant espéré. Tu retournes vers le lieu de la rencontre et celui qui semble être un druide, t'y attends déjà. Tu peux voir de la déception voire même de la colère...
+    <p class="text">Tu n'as pas réussi a récupérer l'or tant espéré. Tu retournes vers le lieu de la rencontre et celui qui semble être un druide,<br> t'y attends déjà. Tu peux voir de la déception voire même de la colère...
     <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
   </div>
 </template>
@@ -42,7 +42,7 @@ export default {
     background-size: cover;
     background-position: (0 60%);
   }
-  .text {
-    padding : 30px 30px;
+ .text {
+    padding : 10px 50px 30px 50px;
   }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="goodCons">
-    <p class="text">Après un combat acharné, vous arrivez a bout de ce loup, les fermiers ont été témoins de votre bravoure... 
+    <p class="text">Après un combat acharné, vous arrivez à bout de ce loup, les fermiers ont été<br> témoin de votre bravoure... 
     <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
   </div>
 </template>
@@ -45,6 +45,6 @@ export default {
     background-position: (0 60%);
   }
   .text {
-    padding : 30px 30px;
+    padding : 10px 50px 30px 50px;
   }
 </style>

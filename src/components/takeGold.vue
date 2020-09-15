@@ -1,6 +1,6 @@
 <template>
   <div class="takeGold">
-    <p class="text">Tu as réussi a récupérer l'or tant espéré. Tu retournes vers le lieu de la rencontre et celui qui semble être un druide, t'y attends déjà. Tu peux voir une satisfaction sur son visage.
+    <p class="text">Tu as réussi a récupérer l'or tant espéré. Tu retournes vers le lieu de la rencontre et celui qui semble <br> être un druide, t'y attends déjà. Tu peux voir une satisfaction sur son visage.
     <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
   </div>
 </template>
@@ -43,6 +43,6 @@ export default {
     background-position: (0 60%);
   }
   .text {
-    padding : 30px 30px;
+    padding : 10px 50px 30px 50px;
   }
 </style>
