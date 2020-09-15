@@ -45,6 +45,8 @@ import angryPeasants from '../components/wolf/angryPeasants';
 import meetthief from '../components/thief/meetthief';
 import help from '../components/thief/help';
 import steal from '../components/thief/steal';
+import goodConsThief from '../components/thief/goodConsThief';
+
 
 export default {
   components: {
@@ -76,7 +78,8 @@ export default {
     angryPeasants,
     meetthief,
     help,
-    steal
+    steal,
+    goodConsThief
   },
   data() {
     return {
