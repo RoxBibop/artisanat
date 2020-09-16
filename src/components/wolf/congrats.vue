@@ -1,6 +1,6 @@
 <template>
   <div class="congrats">
-    <p class="text">... ils te félicitent pour ta bravoure, soignent tes plaies et te nourrissent. Tu pars chercher<br> ton or afin de retourner sur le lieu de la rencontre avec le mystérieux personnage.
+    <p class="text">... ils te félicitent pour ta bravoure, soignent tes plaies et te nourrissent. Tu pars ensuite chercher<br> ton or afin de retourner sur le lieu de rencontre avec le druide.
     <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
   </div>
 </template>

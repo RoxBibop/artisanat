@@ -1,6 +1,6 @@
 <template>
   <div class="angryPeasants">
-    <p class="text">Malheureusement il y a eu des témoins de ta lacheté... Les fermiers te regardent d'un regard sombre et effrayant...<br> tu ne te poses plus de questions, tu décides de partir d'ici et de retourner sur le lieu de rencontre avec le mystérieux <br>personnage sans l'or.
+    <p class="text">Malheureusement il y a eu des témoins de ta lacheté... Les fermiers te chassent de leur terre...<br> tu ne te poses plus de questions, tu décides de partir d'ici et de retourner sur le lieu de rencontre avec le druide <br> sans l'or.
     <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
   </div>
 </template>

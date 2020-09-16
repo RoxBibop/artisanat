@@ -16,7 +16,7 @@ export default {
       datas: {
         left : "leave",
         right : "stayGold",
-        quest : "Tu as comme une joie immense, mais au fond de toi cet endroit et cette aventure t'ont profondément marqué. Que décides tu de faire ?",
+        quest : "Tu as comme une joie immense qui t'envahit, mais au fond de toi cet endroit et cette aventure t'ont profondément marqué. Que décides tu de faire ?",
         cinematic: false,
         scene: ""
       }

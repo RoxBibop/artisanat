@@ -1,6 +1,6 @@
 <template>
   <div class="badCons">
-    <p class="text">Après de longues secondes d'hésitation, tu t'avoues vaincu par ta peur et laisse le loup passer et attaquer les moutons...<br> La suite est comme un déjà vu pour les fermiers...
+    <p class="text">Après de longues secondes d'hésitation, tu t'avoues vaincu par ta peur et laisse le loup passer et attaquer les moutons...<br> La suite est comme un air de déjà vu pour les fermiers...
     <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
   </div>
 </template>
