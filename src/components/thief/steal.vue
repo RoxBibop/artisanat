@@ -15,7 +15,7 @@ export default {
         right : "",
         quest : "",
         cinematic: true,
-        scene: "pasor"
+        scene: "badConsThief"
       }
     }
   },
