@@ -95,7 +95,7 @@ export default {
     negociate,
     stay,
     stayGold,
-    leave
+    leave,
   },
   data() {
     return {

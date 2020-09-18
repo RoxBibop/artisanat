@@ -10,11 +10,20 @@ export default {
   props: {
     questionTxt: String
   },
-  watch:{
-    questionTxt: function() {
-      console.log("changed");
-    },
-  }
+  isReady() {
+    console.log("bonjour à tous")
+  },
+  watch: {
+    '$props':{
+      handler: function (val, oldVal) { 
+        console.log("CEST CHANGE")
+      },
+      deep: true
+    }
+  },
+  mounted() {
+    console.log("CEST MOUNTED");
+  },
 }
 </script>
 
