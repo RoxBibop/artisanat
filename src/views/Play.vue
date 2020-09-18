@@ -105,7 +105,6 @@ export default {
       fromChild : "",
       cinematic: false,
       scene:"",
-      visible: false
     }
   },
 
