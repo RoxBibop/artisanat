@@ -3,7 +3,7 @@
     <Curseur ref="cursor"/>
     <p class="text">
       {{texte}}
-      <span class="arrowBtn" v-on:click="emitToParent()">    <router-link to="/play" class="play link"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></router-link></span></p>
+      <span class="arrowBtn">    <router-link to="/play" class="play link"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></router-link></span></p>
     <img src="../assets/intro.jpg" ref="img" alt="">
 
   </div>
@@ -33,6 +33,9 @@
           this.texte += textEffect.charAt(this.x);
           this.x++;
           setTimeout(this.typeWriter, 40);
+          if (this.x == textEffect.length - 1) {
+            console.log(this.x);
+          }
         }
       }
     },

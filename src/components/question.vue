@@ -9,6 +9,11 @@ export default {
   name: 'question',
   props: {
     questionTxt: String
+  },
+  watch:{
+    questionTxt: function() {
+      console.log("changed");
+    },
   }
 }
 </script>

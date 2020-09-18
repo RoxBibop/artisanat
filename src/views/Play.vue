@@ -1,5 +1,6 @@
 <template>
   <div v-if="!cinematic" class="play">
+
     <div class="leftCtn">
       <component v-on:childToParent="onChildClick" v-bind:is="leftComponent" class="left"></component>
     </div>
@@ -103,7 +104,8 @@ export default {
       rightComponent : "auberge",
       fromChild : "",
       cinematic: false,
-      scene:""
+      scene:"",
+      visible: false
     }
   },
 
@@ -114,8 +116,8 @@ export default {
       this.laquestion = value.quest;
       this.cinematic = value.cinematic;
       this.scene = value.scene;
-    }
-  }
+    },
+  },
 }
 </script>
 
