@@ -15,15 +15,20 @@ export default {
   },
   watch: {
     '$props':{
-      handler: function (val, oldVal) { 
-        console.log("CEST CHANGE")
+      handler: function () { 
+        this.test();
       },
       deep: true
     }
   },
   mounted() {
-    console.log("CEST MOUNTED");
+    this.test();
   },
+  methods: {
+    test () {
+      console.log("ici ça marche")
+    }
+  }
 }
 </script>
 
