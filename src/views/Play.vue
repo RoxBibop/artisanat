@@ -1,6 +1,5 @@
 <template>
   <div v-if="!cinematic" class="play">
-
     <div class="leftCtn">
       <component v-on:childToParent="onChildClick" v-bind:is="leftComponent" class="left"></component>
     </div>

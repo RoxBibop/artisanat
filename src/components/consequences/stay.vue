@@ -1,5 +1,5 @@
 <template>
-  <div class="stayGold"  v-on:click="emitToParent()">
+  <div class="stayGold" @click="click">
     <div class="awnser">Tu décides après un temps de reflexion de rester, au final l'idée du druide est plutôt alléchante.</div>
     <img src="../../assets/inn.png" ref="img" alt="">
   </div>
@@ -20,8 +20,10 @@ export default {
     }
   },
   methods: {
-    emitToParent () {
-      this.$emit('childToParent', this.datas)
+    click(){
+      this.$store.commit("incrementA");
+      this.$store.commit("incrementR");
+      this.$router.push('results');
     }
   }
 }

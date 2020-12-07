@@ -25,6 +25,13 @@ Vue.use(VueRouter)
       return import('../views/IntroGame.vue')
     }
   },
+  {
+    path: '/results',
+    name: 'Results',
+    component: function () {
+      return import('../views/Results.vue')
+    }
+  }
 ]
 
 const router = new VueRouter({
