@@ -1,5 +1,5 @@
 <template>
-  <div class="stayGold" @click="click">
+  <div class="stayGold" v-on:click="click()">
     <div class="awnser">Tu décides après un temps de reflexion de rester, au final l'idée du druide est plutôt alléchante.</div>
     <img src="../../assets/inn.png" ref="img" alt="">
   </div>
@@ -22,6 +22,7 @@ export default {
   methods: {
     click(){
       this.$store.commit("increment", "A");
+      this.$store.commit("increment", "S");
       this.$router.push('results');
     }
   }

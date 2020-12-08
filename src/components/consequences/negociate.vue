@@ -1,5 +1,5 @@
 <template>
-  <div class="negociate"  v-on:click="emitToParent()">
+  <div class="negociate" v-on:click="click()">
     <div class="awnser">Tu ne veux pas rester dans cette époque, tu essaies de négocier avec le druide pour pouvoir partir.</div>
     <img src="../../assets/inn.png" ref="img" alt="">
   </div>
@@ -20,8 +20,12 @@ export default {
     }
   },
   methods: {
-    emitToParent () {
-      this.$emit('childToParent', this.datas)
+    click(){
+      this.$store.commit("increment", "C");
+      this.$store.commit("increment", "R");
+      this.$store.commit("increment", "I");
+      this.$store.commit("increment", "S");
+      this.$router.push('results');
     }
   }
 }

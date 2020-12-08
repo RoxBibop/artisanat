@@ -19,6 +19,11 @@
     methods: {
       
     },
+    beforeCreate(){
+      if(this.$store.state.total == 0){
+        this.$router.push('play');
+      }
+    }
   }
 </script>
 

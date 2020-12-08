@@ -1,5 +1,5 @@
 <template>
-  <div class="stayGold"  v-on:click="emitToParent()">
+  <div class="stayGold" v-on:click="click()">
     <div class="awnser">Tu décides après un temps de reflexion de rester, cet endroit te plaît bien et tu veux t'y aventurer avec l'aide de l'or que tu as récolté.</div>
     <img src="../../assets/inn.png" ref="img" alt="">
   </div>
@@ -20,8 +20,11 @@ export default {
     }
   },
   methods: {
-    emitToParent () {
-      this.$emit('childToParent', this.datas)
+    click(){
+      this.$store.commit("increment", "A");
+      this.$store.commit("increment", "E");
+      this.$store.commit("increment", "S");
+      this.$router.push('results');
     }
   }
 }

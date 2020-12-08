@@ -1,5 +1,5 @@
 <template>
-  <div class="leave"  v-on:click="emitToParent()">
+  <div class="leave" v-on:click="click()">
     <div class="awnser">Tu décides après un temps de reflexion de partir et fais part de ta décision au druide, il commence son rituel...</div>
     <img src="../../assets/leave.jpg" ref="img" alt="">
   </div>
@@ -20,8 +20,10 @@ export default {
     }
   },
   methods: {
-    emitToParent () {
-      this.$emit('childToParent', this.datas)
+    click(){
+      this.$store.commit("increment", "C");
+      this.$store.commit("increment", "R");
+      this.$router.push('results');
     }
   }
 }
