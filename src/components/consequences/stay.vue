@@ -21,8 +21,7 @@ export default {
   },
   methods: {
     click(){
-      this.$store.commit("incrementA");
-      this.$store.commit("incrementR");
+      this.$store.commit("increment", "A");
       this.$router.push('results');
     }
   }

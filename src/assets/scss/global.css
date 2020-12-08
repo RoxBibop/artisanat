@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "sketch";
+  src: url("/police/Sketch 3D.otf");
+}
+
+body {
+  overflow: hidden;
+}
+
+.text {
+  position: absolute;
+  font-size: 22px;
+  z-index: 9999;
+  text-align: left;
+  padding: 10px 50px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.arrowBtn {
+  position: absolute;
+  right: 30px;
+  cursor: pointer;
+  bottom: -10px;
+  -webkit-transform: translate(0, -62%);
+          transform: translate(0, -62%);
+  margin-left: 10px;
+  margin-top: 20px;
+  font-size: 30px;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
+  -webkit-animation-duration: .6s;
+          animation-duration: .6s;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    -webkit-transform: translate(0, -62%);
+            transform: translate(0, -62%);
+  }
+  to {
+    -webkit-transform: translate(6px, -62%);
+            transform: translate(6px, -62%);
+  }
+}
+
+@keyframes slidein {
+  from {
+    -webkit-transform: translate(0, -62%);
+            transform: translate(0, -62%);
+  }
+  to {
+    -webkit-transform: translate(6px, -62%);
+            transform: translate(6px, -62%);
+  }
+}
+/*# sourceMappingURL=global.css.map */

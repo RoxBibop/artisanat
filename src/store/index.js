@@ -13,30 +13,10 @@ export default new Vuex.Store({
     S: 0
   },
   mutations: {
-    incrementA (state){
-      state.A++;
-      console.log("A : " + state.A)
+    increment (state, key){
+      state[key]++;
+      console.log(state);
     },
-    incrementC (state){
-      state.C++;
-      console.log("C : " + state.C)
-    },
-    incrementE (state){
-      state.E++;
-      console.log("E : " + state.E)
-    },
-    incrementI (state){
-      state.I++;
-      console.log("I : " + state.I)
-    },
-    incrementR (state){
-      state.R++;
-      console.log("R : " + state.R)
-    },
-    incrementS (state){
-      state.S++;
-      console.log("S : " + state.S)
-    }
   },
   // actions: {
   // },
