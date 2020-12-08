@@ -22,6 +22,9 @@ export default {
   methods: {
     emitToParent () {
       this.$emit('childToParent', this.datas)
+      this.$store.commit("increment", "E");
+      this.$store.commit("increment", "R");
+      this.$store.commit("increment", "A");
     }
   }
 }
