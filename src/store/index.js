@@ -11,12 +11,10 @@ export default new Vuex.Store({
     I: 0,
     R: 0,
     S: 0,
-    total: 0,
   },
   mutations: {
     increment (state, key){
       state[key]++;
-      state.total++
     },
   },
   // actions: {

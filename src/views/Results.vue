@@ -14,11 +14,40 @@
     name: 'Results',
     data() {
       return {
+        objectDatas : {
+          profile_1 : null,
+          profile_2 : null,
+          profile_3 : null        }
       }
     },
     methods: {
       
     },
+    mounted: function() {
+
+      let obj = {...this.$store.state},
+          i = 0;
+          
+      console.log(obj);
+
+      const getMax = obj => {
+        return Object.keys(obj).filter(x => {
+          return obj[x] == Math.max.apply(null, Object.values(obj));
+        });
+      };
+
+      let arr = getMax(obj);
+
+      arr.forEach(e => {
+        this.objectDatas[`profile_${i+1}`] = e;
+        i++
+      });
+
+      let finalObject = {...this.objectDatas};
+
+      console.log(finalObject);
+    },
+
     beforeCreate(){
       if(this.$store.state.total == 0){
         this.$router.push('play');
