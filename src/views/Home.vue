@@ -1,7 +1,5 @@
 <template>
   <div class="home">
-    <Curseur ref="cursor"/>
-    <router-link to="/intro" class="play link">Jouer</router-link>
     <div class="socialLinks">
       <div class="line">
         <div></div>
@@ -13,25 +11,25 @@
       <fa-icon :icon="['fab','facebook']" class="link"/>
       </div>
     </div>
-    <Scene/>
+    <div class="title">
+      <h1>Choisir l'artisanat</h1>
+      <router-link to="/intro" class="play link">Jouer</router-link>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Scene from '@/components/Scene.vue';
-import Curseur from '@/components/cursor.vue';
+// import Scene from '@/components/Scene.vue';
 
 export default {
   name: 'Home',
   components: {
-    Scene,
-    Curseur
   },
   methods: {
-    cursor: function() {
-      console.log(this.$refs.cursor.$el);
-    }
+    // cursor: function() {
+    //   console.log(this.$refs.cursor.$el);
+    // }
   }
 }
 </script>
@@ -42,17 +40,9 @@ export default {
   margin : 0;
   height: 100vh;
   background-color: rgb(233, 233, 233);
-}
-.play {
-  position: absolute;
-  bottom : 1%;
-  right: 1%;
-  z-index: 999;
-  text-decoration: none;
-  padding: 10px 20px;
-  color : rgb(46, 46, 46);
-  font-family: 'sketch';
-  font-size: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .socialLinks
@@ -62,6 +52,7 @@ export default {
   height: 200px;
   width: 50px;
   bottom: 0;
+  right: 0;
   display: flex;
   flex-direction: column-reverse;
   .line
@@ -101,5 +92,45 @@ export default {
   }
 }
 
+.title{
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  h1{
+    font-family: "cyber";
+    font-size: 6rem;
+    color : rgb(46, 46, 46);
+    font-weight: 100;
+  }
+  .play{
+    z-index: 999;
+    text-decoration: none;
+    padding: 10px 20px;
+    color : rgb(46, 46, 46);
+    font-family: 'play';
+    font-size: 45px;
+    text-transform: uppercase;
+    transition: .2s;
+    animation: transformScale 1s infinite reverse ease-in;
+  }
+  .play:hover{
+    animation-play-state: paused;
+    color: rgb(165, 47, 47);
+    font-size: 45px;
+  }
+}
+@keyframes transformScale {
+  0%{
+    font-size: 45px;
+  }
+  50%{
+    font-size: 55px;
+  }
+  100%{
+    font-size: 45px;
+  }
+} 
 
 </style>

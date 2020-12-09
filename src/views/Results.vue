@@ -49,9 +49,9 @@
     },
 
     beforeCreate(){
-      if(this.$store.state.total == 0){
+      if(this.$store.state.R + this.$store.state.I + this.$store.state.A + this.$store.state.S + this.$store.state.E + this.$store.state.C == 0){
         this.$router.push('play');
-      }
+      } 
     }
   }
 </script>
