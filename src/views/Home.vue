@@ -1,5 +1,35 @@
 <template>
   <div class="home">
+    <div class="set">
+      <div><img src="../assets/leaves/l1.png" alt=""></div>
+      <div><img src="../assets/leaves/l2.png" alt=""></div>
+      <div><img src="../assets/leaves/l4.png" alt=""></div>
+      <div><img src="../assets/leaves/l3.png" alt=""></div>
+      <div><img src="../assets/leaves/l1.png" alt=""></div>
+      <div><img src="../assets/leaves/l2.png" alt=""></div>
+      <div><img src="../assets/leaves/l4.png" alt=""></div>
+      <div><img src="../assets/leaves/l3.png" alt=""></div>
+    </div>
+    <div class="set set2">
+      <div><img src="../assets/leaves/l1.png" alt=""></div>
+      <div><img src="../assets/leaves/l2.png" alt=""></div>
+      <div><img src="../assets/leaves/l4.png" alt=""></div>
+      <div><img src="../assets/leaves/l3.png" alt=""></div>
+      <div><img src="../assets/leaves/l1.png" alt=""></div>
+      <div><img src="../assets/leaves/l2.png" alt=""></div>
+      <div><img src="../assets/leaves/l4.png" alt=""></div>
+      <div><img src="../assets/leaves/l3.png" alt=""></div>
+    </div>
+    <!-- <div class="set set3">
+      <div><img src="../assets/leaves/l1.png" alt=""></div>
+      <div><img src="../assets/leaves/l2.png" alt=""></div>
+      <div><img src="../assets/leaves/l4.png" alt=""></div>
+      <div><img src="../assets/leaves/l3.png" alt=""></div>
+      <div><img src="../assets/leaves/l1.png" alt=""></div>
+      <div><img src="../assets/leaves/l2.png" alt=""></div>
+      <div><img src="../assets/leaves/l4.png" alt=""></div>
+      <div><img src="../assets/leaves/l3.png" alt=""></div>
+    </div> -->
     <div class="socialLinks">
       <div class="line">
         <div></div>
@@ -12,8 +42,7 @@
       </div>
     </div>
     <div class="title">
-      <h1>Choisir l'artisanat</h1>
-      <router-link to="/intro" class="play link">Jouer</router-link>
+      <router-link to="/intro" class="play link">Commencer</router-link>
     </div>
   </div>
 </template>
@@ -39,12 +68,72 @@ export default {
 .home {
   margin : 0;
   height: 100vh;
-  background-color: rgb(233, 233, 233);
+  background-image: url('./../assets/hompage2.jpg');
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.set {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top : 0;
+  left : 0;
+}
+
+.set div {
+  position : absolute;
+  display: block;
+}
+
+.set div:nth-child(1) {
+  left: 20%;
+  animation : animateLeaves 15s linear infinite;
+  animation-delay: -7s;
+}
+.set div:nth-child(2) {
+  left: 78%;
+  animation : animateLeaves 20s linear infinite;
+  animation-delay: -5s;
+}
+.set div:nth-child(3) {
+  left: 70%;
+  animation : animateLeaves 25s linear infinite;
+}
+.set div:nth-child(4) {
+  left: 10%;
+  animation : animateLeaves 15s linear infinite;
+  animation-delay: -5s;
+}
+.set div:nth-child(5) {
+  left: 94%;
+  animation : animateLeaves 18s linear infinite;
+  animation-delay: -10s;
+}
+.set div:nth-child(6) {
+  left: 0%;
+  animation : animateLeaves 14s linear infinite;
+}
+.set div:nth-child(7) {
+  left: 15%;
+  animation : animateLeaves 21s linear infinite;
+}
+.set div:nth-child(8) {
+  left: 67%;
+  animation : animateLeaves 15s linear infinite;
+}
+
+.set2 {
+  transform: scale(2) rotateY(180deg);
+  filter: blur(2px);
+}
+
+.set3 {
+  transform: scale(0.8) rotateX(180deg);
+  filter: blur(2px);
+}
 .socialLinks
 {
   // z-index: 1;
@@ -93,7 +182,7 @@ export default {
 }
 
 .title{
-  height: 50%;
+  margin-top: 15%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -105,19 +194,21 @@ export default {
     font-weight: 100;
   }
   .play{
+    text-shadow: 1px 1px 2px rgb(161, 73, 1), 0 0 1em rgb(0, 0, 17), 0 0 0.1em rgb(13, 13, 14);
     z-index: 999;
     text-decoration: none;
     padding: 10px 20px;
-    color : rgb(46, 46, 46);
+    color : rgb(153, 57, 2);
     font-family: 'play';
     font-size: 45px;
     text-transform: uppercase;
+    letter-spacing: .2rem;
     transition: .2s;
     animation: transformScale 1s infinite reverse ease-in;
   }
   .play:hover{
     animation-play-state: paused;
-    color: rgb(165, 47, 47);
+    color: rgb(255, 196, 0);
     font-size: 45px;
   }
 }
@@ -132,5 +223,31 @@ export default {
     font-size: 45px;
   }
 } 
+
+@keyframes animateLeaves {
+  0% {
+    opacity : 0;
+    top: -10%;
+    transform:  translateX2(0px) rotate(0deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  20% {
+    transform:  translateX(-20px) rotate(45deg);
+  }
+  40% {
+    transform:  translateX(-20px) rotate(90deg);
+  }
+  60% {
+    transform:  translateX(20px) rotate(135deg);
+  }
+  80% {
+    transform:  translateX(-20px) rotate(180deg);
+  }
+  100% {
+    top: 110%;
+  }
+}
 
 </style>
