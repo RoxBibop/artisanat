@@ -1,6 +1,6 @@
 <template>
   <div class="goodCons">
-    <p class="text">Après un combat acharné, vous arrivez à bout de ce loup, les fermiers ont été<br> témoin de votre bravoure... 
+    <p class="text">{{this.texte}}
     <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
   </div>
 </template>
@@ -21,14 +21,30 @@ export default {
         quest : "",
         cinematic: true,
         scene: "congrats"
-      }
+      },
+      x: 0,
+      texte: ""
     }
   },
   methods: {
     emitToParent() {
       this.$emit('childToParent', this.datas);
+    },
+    typeWriter() {
+      let textEffect = "Après un combat acharné, vous arrivez à bout de ce loup, les fermiers ont été témoins de votre bravoure... ";
+      if (this.x < textEffect.length) {
+        this.texte += textEffect.charAt(this.x);
+        this.x++;
+        setTimeout(this.typeWriter, 40);
+        if (this.x == textEffect.length - 1) {
+          console.log(this.x);
+        }
+      }
     }
   },
+  mounted(){
+    this.typeWriter();
+  }
 }
 </script>
 

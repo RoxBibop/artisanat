@@ -1,9 +1,6 @@
 <template>
   <div class="food">
-    <p class="text">"Tu m'as l'air sympa toi!<br>
-        Hélàs je peux pas vraiment t'aider là.
-        Allez, je t'offre un repas chaud et une bière,
-    <br>c'est tout ce que je peux faire pour toi mon ami..." 
+    <p class="text">{{this.texte}}
     <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
   </div>
 </template>
@@ -24,14 +21,30 @@ export default {
         quest : "",
         cinematic: true,
         scene: "meet"
-      }
+      },
+      x: 0,
+      texte: ""
     }
   },
   methods: {
     emitToParent() {
       this.$emit('childToParent', this.datas);
+    },
+    typeWriter() {
+      let textEffect = "\"Tu m'as l'air sympa toi! Hélàs je peux pas vraiment t'aider là. Allez, je t'offre un repas chaud et une bière, c'est tout ce que je peux faire pour toi mon ami...\"";
+      if (this.x < textEffect.length) {
+        this.texte += textEffect.charAt(this.x);
+        this.x++;
+        setTimeout(this.typeWriter, 40);
+        if (this.x == textEffect.length - 1) {
+          console.log(this.x);
+        }
+      }
     }
   },
+  mounted(){
+    this.typeWriter();
+  }
 }
 </script>
 

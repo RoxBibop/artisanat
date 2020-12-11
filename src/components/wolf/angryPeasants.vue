@@ -1,6 +1,6 @@
 <template>
   <div class="angryPeasants">
-    <p class="text">Malheureusement il y a eu des témoins de ta lacheté... Les fermiers te chassent de leur terre...<br> tu ne te poses plus de questions, tu décides de partir d'ici et de retourner sur le lieu de rencontre avec le druide <br> sans l'or.
+    <p class="text">{{this.texte}}
     <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
   </div>
 </template>
@@ -21,14 +21,30 @@ export default {
         quest : "",
         cinematic: true,
         scene: "noTakeGold"
-      }
+      },
+      x: 0,
+      texte: ""
     }
   },
   methods: {
     emitToParent() {
       this.$emit('childToParent', this.datas);
+    },
+    typeWriter() {
+      let textEffect = "Malheureusement il y a eu des témoins de votre lacheté... Les fermiers vous chassent de leur terre... vous ne vous posez pas de questions, vous décidez de partir d'ici au plus vite avant que cela ne dégénère et de retourner sur le lieu de rencontre avec le druide sans l'or.";
+      if (this.x < textEffect.length) {
+        this.texte += textEffect.charAt(this.x);
+        this.x++;
+        setTimeout(this.typeWriter, 40);
+        if (this.x == textEffect.length - 1) {
+          console.log(this.x);
+        }
+      }
     }
   },
+  mounted(){
+    this.typeWriter();
+  }
 }
 </script>
 

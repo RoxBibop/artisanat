@@ -1,6 +1,6 @@
 <template>
   <div class="negociate" v-on:click="click()">
-    <div class="awnser">Tu ne veux pas rester dans cette époque, tu essaies de négocier avec le druide pour pouvoir partir.</div>
+    <div class="awnser">Vous ne voulez pas rester dans cette époque, vous essayez de négocier avec le druide pour pouvoir partir.</div>
     <img src="../../assets/inn.png" ref="img" alt="">
   </div>
 </template>

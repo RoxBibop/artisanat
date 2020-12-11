@@ -1,6 +1,6 @@
 <template>
   <div class="leave" v-on:click="click()">
-    <div class="awnser">Tu décides après un temps de reflexion de partir et fais part de ta décision au druide, il commence son rituel...</div>
+    <div class="awnser">Vous décidez après un temps de reflexion de partir et faites part de votre décision au druide, il commence son rituel...</div>
     <img src="../../assets/leave.jpg" ref="img" alt="">
   </div>
 </template>

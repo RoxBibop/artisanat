@@ -1,7 +1,7 @@
 <template>
   <div class="meetthief">
     <div class="text">
-      <p>Vous remontez la trace des voleurs et tombez sur un groupe de voleurs peu commodes, mais qui semblent étrangement vous faire confiance.
+      <p>{{this.texte}}
       <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/>
       </span>
       </p>
@@ -20,13 +20,29 @@ export default {
         quest : "Le groupe de voleurs vous proposent de vous joindre à eux pour leur prochain larcin. Cependnat, vous apercevez plusieurs besaces contenant une partie de leur butin...",
         cinematic: false,
         scene: ""
-      }
+      },
+      x: 0,
+      texte: ""
     }
   },
   methods: {
     emitToParent () {
       this.$emit('childToParent', this.datas)
+    },
+    typeWriter() {
+      let textEffect = "Vous remontez la trace des voleurs et tombez sur un groupe de voleurs peu commodes, mais qui semblent étrangement vous faire confiance.";
+      if (this.x < textEffect.length) {
+        this.texte += textEffect.charAt(this.x);
+        this.x++;
+        setTimeout(this.typeWriter, 40);
+        if (this.x == textEffect.length - 1) {
+          console.log(this.x);
+        }
+      }
     }
+  },
+  mounted(){
+    this.typeWriter();
   }
 }
   
@@ -51,8 +67,8 @@ export default {
     transition: .3s;
   }
 
-  .text {
-    width : 60%;
-    padding : 10px 50px 30px 50px;
-  }
+  // .text {
+  //   width : 60%;
+  //   padding : 10px 50px 30px 50px;
+  // }
 </style>

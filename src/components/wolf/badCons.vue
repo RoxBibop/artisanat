@@ -1,6 +1,6 @@
 <template>
   <div class="badCons">
-    <p class="text">Après de longues secondes d'hésitation, tu t'avoues vaincu par ta peur et laisse le loup passer et attaquer les moutons...<br> La suite est comme un air de déjà vu pour les fermiers...
+    <p class="text">{{this.texte}}
     <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
   </div>
 </template>
@@ -21,14 +21,30 @@ export default {
         quest : "",
         cinematic: true,
         scene: "angryPeasants"
-      }
+      },
+      x: 0,
+      texte: ""
     }
   },
   methods: {
     emitToParent() {
       this.$emit('childToParent', this.datas);
+    },
+    typeWriter() {
+      let textEffect = "Après de longues secondes d'hésitation, vous vous laissez vaincre par votre peur et le loup part attaquer les moutons sans aucune défense... La suite est comme un air de déjà vu pour les fermiers...";
+      if (this.x < textEffect.length) {
+        this.texte += textEffect.charAt(this.x);
+        this.x++;
+        setTimeout(this.typeWriter, 40);
+        if (this.x == textEffect.length - 1) {
+          console.log(this.x);
+        }
+      }
     }
   },
+  mounted(){
+    this.typeWriter();
+  }
 }
 </script>
 

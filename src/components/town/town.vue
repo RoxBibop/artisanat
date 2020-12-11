@@ -1,7 +1,7 @@
 <template>
   <div class="town">
     <div class="text">
-      <p>Après quelques heures de marches, vous arrivez enfin dans la ville...<br>Une foule se rassemble au milieu d'une place, vous décidez de vous approcher.
+      <p>{{this.texte}}
       <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/>
       </span>
       </p>
@@ -26,13 +26,29 @@ export default {
         quest : "",
         cinematic: true,
         scene: "town2"
-      }
+      },
+      x: 0,
+      texte: ""
     }
   },
   methods: {
     emitToParent () {
       this.$emit('childToParent', this.datas)
+    },
+    typeWriter() {
+      let textEffect = "Après quelques heures de marches, vous arrivez enfin dans la ville... Une foule se rassemble au milieu d'une place, vous décidez de vous approcher.";
+      if (this.x < textEffect.length) {
+        this.texte += textEffect.charAt(this.x);
+        this.x++;
+        setTimeout(this.typeWriter, 40);
+        if (this.x == textEffect.length - 1) {
+          console.log(this.x);
+        }
+      }
     }
+  },
+  mounted(){
+    this.typeWriter();
   }
 }
   
