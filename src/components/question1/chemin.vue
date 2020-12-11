@@ -1,6 +1,7 @@
 <template>
   <div class="chemin" v-on:click="emitToParent()">
-    <div class="awnser">Vous vous aventurez dans le chemin</div>
+   
+    <div class="awnser" v-if="displayText">Vous vous aventurez dans le chemin</div>
     <img src="../../assets/chemin.jpg" alt="">
   </div>
 </template>
@@ -16,7 +17,8 @@ export default {
         quest : "Vous vous aventurez dans le chemin, et entendez soudain un son suspect semblant provenir d'un buisson à vos pieds.",
         scene : "",
         cinematic: false,
-      }
+      },
+      displayText: false,
     }
   },
   methods: {
@@ -25,7 +27,13 @@ export default {
       this.$store.commit("increment", "C");
       this.$store.commit("increment", "S");
       this.$store.commit("increment", "R");
-    }
+    },
+  },
+  mounted: function() {
+    let time = this.datas.quest.length * 50
+    setTimeout(() => {
+      this.displayText = true;
+    }, time);
   }
 }
 </script>

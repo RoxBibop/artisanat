@@ -1,6 +1,6 @@
 <template>
   <div class="stayGold" v-on:click="click()">
-    <div class="awnser">Vous décidez après un temps de reflexion de rester, au final l'idée du druide est plutôt alléchante.</div>
+    <div class="awnser" v-if="displayText">Vous décidez après un temps de reflexion de rester, au final l'idée du druide est plutôt alléchante.</div>
     <img src="../../assets/inn.png" ref="img" alt="">
   </div>
 </template>
@@ -16,7 +16,8 @@ export default {
         quest : "",
         scene : "",
         cinematic: true,
-      }
+      },
+      displayText: false,
     }
   },
   methods: {
@@ -25,6 +26,12 @@ export default {
       this.$store.commit("increment", "S");
       this.$router.push('results');
     }
+  },
+  mounted: function() {
+    let time = 10600
+    setTimeout(() => {
+      this.displayText = true;
+    }, time);
   }
 }
   

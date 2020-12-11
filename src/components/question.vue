@@ -34,7 +34,6 @@ export default {
   },
   methods: {
     test () {
-      console.log("ici ça marche");
       this.x = 0;
       this.texte = "";
     },

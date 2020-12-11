@@ -1,6 +1,6 @@
 <template>
   <div class="panic" v-on:click="emitToParent()">
-    <div class="awnser">paniquée</div>
+    <div class="awnser" v-if="displayText">paniquée</div>
     <img src="../../assets/panic.png" ref="img" alt="">
   </div>
 </template>
@@ -16,7 +16,8 @@ export default {
         quest : "",
         cinematic: true,
         scene: 'foodPanic'
-      }
+      },
+      displayText: false,
     }
   },
   methods: {
@@ -25,6 +26,12 @@ export default {
       this.$store.commit("increment", "C");
       this.$store.commit("increment", "I");
     }
+  },
+  mounted: function() {
+    let time = 3500
+    setTimeout(() => {
+      this.displayText = true;
+    }, time);
   }
 }
   

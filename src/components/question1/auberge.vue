@@ -1,6 +1,6 @@
 <template>
   <div class="auberge"  v-on:click="emitToParent()">
-    <div class="awnser">Vous vous dirigez vers l'auberge</div>
+    <div class="awnser" v-if="displayText">Vous vous dirigez vers l'auberge</div>
     <img src="../../assets/inn.png" ref="img" alt="">
   </div>
 </template>
@@ -13,10 +13,11 @@ export default {
       datas : {
         left : "",
         right : "",
-        quest : "",
+        quest : "Vous vous aventurez dans le chemin, et entendez soudain un son suspect semblant provenir d'un buisson à vos pieds.",
         scene : "welcInn",
         cinematic: true,
-      }
+      },
+      displayText: false,
     }
   },
   methods: {
@@ -26,6 +27,12 @@ export default {
       this.$store.commit("increment", "R");
       this.$store.commit("increment", "S");
     },
+  },
+  mounted: function() {
+    let time = this.datas.quest.length * 50
+    setTimeout(() => {
+      this.displayText = true;
+    }, time);
   }
 }
   

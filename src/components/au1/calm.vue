@@ -1,6 +1,6 @@
 <template>
   <div class="calm" v-on:click="emitToParent()">
-    <div class="awnser">calme</div>
+    <div class="awnser" v-if="displayText">calme</div>
     <img src="../../assets/calm.jpg" ref="img" alt="">
   </div>
 </template>
@@ -16,7 +16,8 @@ export default {
         quest : "",
         cinematic: true,
         scene: "foodCalm"
-      }
+      },
+      displayText: false,
     }
   },
   methods: {
@@ -27,6 +28,12 @@ export default {
       this.$store.commit("increment", "S");
       this.$store.commit("increment", "I");
     }
+  },
+  mounted: function() {
+    let time = 3500
+    setTimeout(() => {
+      this.displayText = true;
+    }, time);
   }
 }
   

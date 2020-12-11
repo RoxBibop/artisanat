@@ -1,6 +1,6 @@
 <template>
   <div class="negociate" v-on:click="click()">
-    <div class="awnser">Vous ne voulez pas rester dans cette époque, vous essayez de négocier avec le druide pour pouvoir partir.</div>
+    <div class="awnser"  v-if="displayText">Vous ne voulez pas rester dans cette époque, vous essayez de négocier avec le druide pour pouvoir partir.</div>
     <img src="../../assets/inn.png" ref="img" alt="">
   </div>
 </template>
@@ -16,7 +16,8 @@ export default {
         quest : "",
         scene : "",
         cinematic: true,
-      }
+      },
+      displayText: false,
     }
   },
   methods: {
@@ -27,6 +28,12 @@ export default {
       this.$store.commit("increment", "S");
       this.$router.push('results');
     }
+  },
+  mounted: function() {
+    let time = 10600
+    setTimeout(() => {
+      this.displayText = true;
+    }, time);
   }
 }
   

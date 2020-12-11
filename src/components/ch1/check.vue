@@ -1,6 +1,6 @@
 <template>
   <div class="check" v-on:click="emitToParent()">
-    <div class="awnser">Vous décidez de vous arrêter et d'inspecter le buisson</div>
+    <div class="awnser" v-if="displayText">Vous décidez de vous arrêter et d'inspecter le buisson</div>
     <img src="../../assets/check.jpeg" ref="img" alt="">
   </div>
 </template>
@@ -16,7 +16,8 @@ export default {
         quest : "",
         cinematic: true,
         scene: "isChecking"
-      }
+      },
+      displayText: false,
     }
   },
   methods: {
@@ -25,7 +26,13 @@ export default {
       this.$store.commit("increment", "A");
       this.$store.commit("increment", "E");
       this.$store.commit("increment", "I");
-    }
+    },
+  },
+  mounted: function() {
+    let time = 2400;
+    setTimeout(() => {
+      this.displayText = true;
+    }, time);
   }
 }
   

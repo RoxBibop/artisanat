@@ -1,6 +1,6 @@
 <template>
   <div class="leave" v-on:click="click()">
-    <div class="awnser">Vous décidez après un temps de reflexion de partir et faites part de votre décision au druide, il commence son rituel...</div>
+    <div class="awnser" v-if="displayText">Vous décidez après un temps de reflexion de partir et faites part de votre décision au druide, il commence son rituel...</div>
     <img src="../../assets/leave.jpg" ref="img" alt="">
   </div>
 </template>
@@ -16,7 +16,8 @@ export default {
         quest : "",
         scene : "ritual",
         cinematic: true,
-      }
+      },
+      displayText: false,
     }
   },
   methods: {
@@ -25,6 +26,12 @@ export default {
       this.$store.commit("increment", "R");
       this.$router.push('results');
     }
+  },
+  mounted: function() {
+    let time = 6800
+    setTimeout(() => {
+      this.displayText = true;
+    }, time);
   }
 }
   

@@ -1,6 +1,6 @@
 <template>
   <div class="brave" v-on:click="emitToParent()">
-    <div class="awnser">D'attaquer le loup</div>
+    <div class="awnser" v-if="displayText">D'attaquer le loup</div>
     <img src="../../assets/brave.jpg" ref="img" alt="">
   </div>
 </template>
@@ -16,7 +16,8 @@ export default {
         quest : "",
         cinematic: true,
         scene: "goodCons"
-      }
+      },
+      displayText: false,
     }
   },
   methods: {
@@ -25,6 +26,12 @@ export default {
       this.$store.commit("increment", "E");
       this.$store.commit("increment", "S");
     }
+  },
+  mounted: function() {
+    let time = 5400
+    setTimeout(() => {
+      this.displayText = true;
+    }, time);
   }
 }
   

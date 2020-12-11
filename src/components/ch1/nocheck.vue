@@ -1,6 +1,6 @@
 <template>
   <div class="nocheck" v-on:click="emitToParent()">
-    <div class="awnser">Probablement juste un petit animal, vous ignorez le bruit et continuez votre chemin</div>
+    <div class="awnser" v-if="displayText">Probablement juste un petit animal, vous ignorez le bruit et continuez votre chemin</div>
     <img src="../../assets/nocheck.jpeg" ref="img" alt="">
   </div>
 </template>
@@ -16,7 +16,8 @@ export default {
         quest : "",
         cinematic: true,
         scene: "meet"
-      }
+      },
+      displayText: false,
     }
   },
   methods: {
@@ -25,6 +26,12 @@ export default {
       this.$store.commit("increment", "A");
       this.$store.commit("increment", "C");
     }
+  },
+  mounted: function() {
+    let time = 2400;
+    setTimeout(() => {
+      this.displayText = true;
+    }, time);
   }
 }
   

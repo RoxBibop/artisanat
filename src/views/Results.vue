@@ -19,7 +19,6 @@
               <p class="cardcontent">{{ job.smallDescription }}</p>
             </div>
           </div>
-
         </div>
       </div>
     </div>

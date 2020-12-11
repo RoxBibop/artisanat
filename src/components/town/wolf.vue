@@ -1,6 +1,6 @@
 <template>
   <div class="wolf" v-on:click="emitToParent()">
-    <div class="awnser">... loups</div>
+    <div class="awnser" v-if="displayText">... loups</div>
     <img src="../../assets/wolf.jpg" ref="img" alt="">
   </div>
 </template>
@@ -16,7 +16,8 @@ export default {
         quest : "",
         cinematic: true,
         scene: "peasant"
-      }
+      },
+      displayText: false,
     }
   },
   methods: {
@@ -26,6 +27,12 @@ export default {
       this.$store.commit("increment", "I");
       this.$store.commit("increment", "S");
     }
+  },
+  mounted: function() {
+    let time = 3800
+    setTimeout(() => {
+      this.displayText = true;
+    }, time);
   }
 }
   

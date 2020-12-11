@@ -1,6 +1,6 @@
 <template>
   <div class="coward" v-on:click="emitToParent()">
-    <div class="awnser">De rester caché</div>
+    <div class="awnser" v-if="displayText">De rester caché</div>
     <img src="../../assets/coward.jpg" ref="img" alt="">
   </div>
 </template>
@@ -16,7 +16,8 @@ export default {
         quest : "",
         cinematic: true,
         scene: "badCons"
-      }
+      },
+      displayText: false,
     }
   },
   methods: {
@@ -25,6 +26,12 @@ export default {
       this.$store.commit("increment", "C");
       this.$store.commit("increment", "R");
     }
+  },
+  mounted: function() {
+    let time = 5400
+    setTimeout(() => {
+      this.displayText = true;
+    }, time);
   }
 }
   

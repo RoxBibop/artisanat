@@ -1,6 +1,6 @@
 <template>
   <div class="thief" v-on:click="emitToParent()">
-    <div class="awnser">... voleurs</div>
+    <div class="awnser" v-if="displayText">... voleurs</div>
     <img src="../../assets/thief.jpg" ref="img" alt="">
   </div>
 </template>
@@ -16,7 +16,8 @@ export default {
         quest : "",
         cinematic: true,
         scene: "meetthief"
-      }
+      },
+      displayText: false,
     }
   },
   methods: {
@@ -26,6 +27,12 @@ export default {
       this.$store.commit("increment", "R");
       this.$store.commit("increment", "A");
     }
+  },
+  mounted: function() {
+    let time = 3800
+    setTimeout(() => {
+      this.displayText = true;
+    }, time);
   }
 }
   

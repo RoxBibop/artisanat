@@ -1,6 +1,6 @@
 <template>
   <div class="steal" v-on:click="emitToParent()">
-    <div class="awnser">Vous décidez de ne pas les suivre, et tentez de dérober l'un des sacs avant de partir.</div>
+    <div class="awnser" v-if="displayText">Vous décidez de ne pas les suivre, et tentez de dérober l'un des sacs avant de partir.</div>
     <img src="../../assets/steal.jpg" ref="img" alt="">
   </div>
 </template>
@@ -16,7 +16,8 @@ export default {
         quest : "",
         cinematic: true,
         scene: "badConsThief"
-      }
+      },
+      displayText: false,
     }
   },
   methods: {
@@ -26,6 +27,12 @@ export default {
       this.$store.commit("increment", "I");
       this.$store.commit("increment", "R");
     }
+  },
+  mounted: function() {
+    let time = 7000
+    setTimeout(() => {
+      this.displayText = true;
+    }, time);
   }
 }
   

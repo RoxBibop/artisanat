@@ -1,6 +1,6 @@
 <template>
   <div class="help" v-on:click="emitToParent()">
-    <div class="awnser">Vous ignorez les sacs, vous obtiendrez surement bien plus d'argent en partant avec eux !</div>
+    <div class="awnser" v-if="displayText">Vous ignorez les sacs, vous obtiendrez surement bien plus d'argent en partant avec eux !</div>
     <img src="../../assets/help.jpg" ref="img" alt="">
   </div>
 </template>
@@ -16,7 +16,8 @@ export default {
         quest : "",
         cinematic: true,
         scene: "goodConsThief"
-      }
+      },
+      displayText: false,
     }
   },
   methods: {
@@ -25,6 +26,12 @@ export default {
       this.$store.commit("increment", "C");
       this.$store.commit("increment", "S");
     }
+  },
+  mounted: function() {
+    let time = 7000
+    setTimeout(() => {
+      this.displayText = true;
+    }, time);
   }
 }
   
