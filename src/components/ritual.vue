@@ -1,6 +1,6 @@
 <template>
   <div class="ritual">
-    <p class="text">Finalement tu veux revoir ton monde... tu fais part de cette décision au druide... Après quelques secondes d'incantation dans un langage complètement inconnue à tes yeux, un portail s'ouvre et tu peux entre apercevoir... ta maison!
+    <p class="text">{{this.texte}}
     <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
   </div>
 </template>
@@ -19,14 +19,30 @@ export default {
         quest : "",
         cinematic: true,
         scene: ""
-      }
+      },
+      x: 0,
+      texte: ""
     }
   },
   methods: {
     emitToParent() {
       this.$emit('childToParent', this.datas);
+    },
+    typeWriter() {
+      let textEffect = "Finalement vous voulez revoir votre monde... vous faites part de cette décision au druide... Après quelques secondes d'incantation dans un langage complètement inconnue, un portail s'ouvre et vous pouvez enfin apercevoir... votre maison!";
+      if (this.x < textEffect.length) {
+        this.texte += textEffect.charAt(this.x);
+        this.x++;
+        setTimeout(this.typeWriter, 40);
+        if (this.x == textEffect.length - 1) {
+          console.log(this.x);
+        }
+      }
     }
   },
+  mounted(){
+    this.typeWriter();
+  }
 }
 </script>
 
@@ -42,7 +58,7 @@ export default {
     background-size: cover;
     background-position: (0 60%);
   }
- .text {
-    padding : 10px 50px 30px 50px;
-  }
+//  .text {
+//     padding : 10px 50px 30px 50px;
+//   }
 </style>

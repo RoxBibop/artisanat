@@ -34,7 +34,9 @@ export default {
   },
   methods: {
     test () {
-      console.log("ici ça marche")
+      console.log("ici ça marche");
+      this.x = 0;
+      this.texte = "";
     },
     typeWriter() {
       let textEffect = this.questionTxt;
@@ -55,10 +57,9 @@ export default {
 <style scoped lang="scss">
   .question {
     position: absolute;
-    bottom : 50px;
+    bottom : 25px;
     left : 50%;
     transform: translateX(-50%);
-
     p {
       background-color: rgba(0, 0, 0, 0.616);
       padding : 20px 60px;

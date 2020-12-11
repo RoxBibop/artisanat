@@ -116,6 +116,9 @@ export default {
       this.scene = value.scene;
     },
   },
+  mounted(){
+    this.$store.commit("resetState");
+  }
 }
 </script>
 

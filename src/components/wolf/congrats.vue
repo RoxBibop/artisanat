@@ -1,6 +1,6 @@
 <template>
   <div class="congrats">
-    <p class="text">... ils te félicitent pour ta bravoure, soignent tes plaies et te nourrissent. Tu pars ensuite chercher<br> ton or afin de retourner sur le lieu de rencontre avec le druide.
+    <p class="text">{{this.texte}}
     <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
   </div>
 </template>
@@ -21,14 +21,30 @@ export default {
         quest : "",
         cinematic: true,
         scene: "takeGold"
-      }
+      },
+      x: 0,
+      texte: ""
     }
   },
   methods: {
     emitToParent() {
       this.$emit('childToParent', this.datas);
+    },
+    typeWriter() {
+      let textEffect = "... ils vous félicitent pour votre bravoure. Ils soignent vos plaies et vous nourrissent. Après avoir été remis sur pieds, vous repartez chercher votre or afin de le donner au druide.";
+      if (this.x < textEffect.length) {
+        this.texte += textEffect.charAt(this.x);
+        this.x++;
+        setTimeout(this.typeWriter, 40);
+        if (this.x == textEffect.length - 1) {
+          console.log(this.x);
+        }
+      }
     }
   },
+  mounted(){
+    this.typeWriter();
+  }
 }
 </script>
 

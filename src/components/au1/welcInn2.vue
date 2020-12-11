@@ -1,7 +1,7 @@
 <template>
   <div class="welcInn">
     <div class="text">
-     <p>Vous décidez de rentrer après un temps  d'hésitation... et un silence s'installe.<br> L'aubergiste vous demande si vous voulez boire quelque chose.
+      <p>{{this.texte}}
       <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
     </div>
     <img src="" ref="img" alt="">
@@ -24,13 +24,29 @@ export default {
         quest : " Il faut savoir ou vous vous trouvez. Comment lui demandez vous cela ? De manière ...",
         scene : "",
         cinematic: false,
-      }
+      },
+      x: 0,
+      texte: ""
     }
   },
   methods: {
     emitToParent () {
       this.$emit('childToParent', this.datas)
+    },
+    typeWriter() {
+      let textEffect = "Vous décidez de rentrer après un temps  d'hésitation... et un silence s'installe. L'aubergiste vous demande si vous voulez boire quelque chose.";
+      if (this.x < textEffect.length) {
+        this.texte += textEffect.charAt(this.x);
+        this.x++;
+        setTimeout(this.typeWriter, 40);
+        if (this.x == textEffect.length - 1) {
+          console.log(this.x);
+        }
+      }
     }
+  },
+  mounted(){
+    this.typeWriter();
   }
 }
   

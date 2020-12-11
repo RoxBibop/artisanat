@@ -1,6 +1,6 @@
 <template>
   <div class="stayGold" v-on:click="click()">
-    <div class="awnser">Tu décides après un temps de reflexion de rester, au final l'idée du druide est plutôt alléchante.</div>
+    <div class="awnser">Vous décidez après un temps de reflexion de rester, au final l'idée du druide est plutôt alléchante.</div>
     <img src="../../assets/inn.png" ref="img" alt="">
   </div>
 </template>

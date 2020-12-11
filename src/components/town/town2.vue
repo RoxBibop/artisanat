@@ -1,11 +1,7 @@
 <template>
   <div class="town2">
     <div class="text">
-      <p>un crieur s'adresse a la foule : <br>
-        "Oyez Oyez la populace!! Soyez mis en garde des loups mangent nos moutons, les fermiers ont besoin de votre aide !<br>
-        Sans parler des voleurs qui dérobent nos biens et effrayent la population !<br>
-        une récompense sera offerte à celui ou celle qui nous débarassa
-        de ces fléaux !"
+      <p>{{this.texte}}
       <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/>
       </span>
       </p>
@@ -30,13 +26,29 @@ export default {
         quest : "Voilà la fameuse opportunité qui s'offre a vous ! Que faites vous ? Se débarasser des ...",
         cinematic: false,
         scene: ""
-      }
+      },
+      x: 0,
+      texte: ""
     }
   },
   methods: {
     emitToParent () {
       this.$emit('childToParent', this.datas)
+    },
+    typeWriter() {
+      let textEffect = "un crieur s'adresse a la foule : \"Oyez Oyez la populace!! Soyez mis en garde! Des loups mangent nos moutons, les fermiers ont besoin de votre aide! Sans parler des voleurs qui dérobent nos biens et effrayent la population ! Une récompense sera offerte à celui ou celle qui nous débarassera de ces fléaux !\"";
+      if (this.x < textEffect.length) {
+        this.texte += textEffect.charAt(this.x);
+        this.x++;
+        setTimeout(this.typeWriter, 40);
+        if (this.x == textEffect.length - 1) {
+          console.log(this.x);
+        }
+      }
     }
+  },
+  mounted(){
+    this.typeWriter();
   }
 }
   

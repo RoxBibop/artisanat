@@ -1,7 +1,7 @@
 <template>
   <div class="meet2">
     <div class="text">
-      <p>Dans l'absence d'une meilleure solution, vous décidez de lui faire confiance.<br> Il vous suggère d'aller en ville et vous montre le chemin...
+      <p>{{this.texte}}
       <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
     </div>
     <Curseur/>
@@ -24,14 +24,30 @@ export default {
         quest : "",
         cinematic: true,
         scene: "town"
-      }
+      },
+      x: 0,
+      texte: ""
     }
   },
   methods: {
     emitToParent() {
       this.$emit('childToParent', this.datas);
+    },
+    typeWriter() {
+      let textEffect = "Dans l'absence d'une meilleure solution, vous décidez de lui faire confiance. Il vous suggère d'aller en ville et vous montre le chemin...";
+      if (this.x < textEffect.length) {
+        this.texte += textEffect.charAt(this.x);
+        this.x++;
+        setTimeout(this.typeWriter, 40);
+        if (this.x == textEffect.length - 1) {
+          console.log(this.x);
+        }
+      }
     }
   },
+  mounted(){
+    this.typeWriter();
+  }
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="meet">
     <div class="text">
-      <p>Vous continuez donc votre route, lorsqu'un étrange personnage semble vous appeller.<br> Il vous explique qu'il sait ce qu'il vous arrive et qu'il peut vous aider à rentrer chez vous,<br> mais ce ne sera pas gratuit.<br> En échange de 500 pièces d'or il vous apportera son aide. 
+      <p>{{this.texte}}
       <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
     </div>
     <Curseur/>
@@ -24,14 +24,30 @@ export default {
         quest : "",
         cinematic: true,
         scene: "meet2"
-      }
+      },
+      x: 0,
+      texte: ""
     }
   },
   methods: {
     emitToParent() {
       this.$emit('childToParent', this.datas);
+    },
+    typeWriter() {
+      let textEffect = "Vous continuez donc votre route, lorsqu'un étrange personnage semble vous appeller. Il vous explique qu'il sait ce qu'il vous arrive et qu'il peut vous aider à vous renvoyer à votre époque, mais ce ne sera pas gratuit. En échange de 500 pièces d'or il vous apportera son aide.";
+      if (this.x < textEffect.length) {
+        this.texte += textEffect.charAt(this.x);
+        this.x++;
+        setTimeout(this.typeWriter, 40);
+        if (this.x == textEffect.length - 1) {
+          console.log(this.x);
+        }
+      }
     }
   },
+  mounted(){
+    this.typeWriter();
+  }
 }
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="takeGold">
-    <p class="text">Tu retournes sur le lieu de ta recontre avec l'étrange personnage, il t'y attends déjà. Tu peux voir une satisfaction sur son visage lorsque tu lui donnes l'or.
+    <p class="text">{{this.texte}}
     <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
   </div>
 </template>
@@ -16,17 +16,33 @@ export default {
       datas: {
         left : "leave",
         right : "stayGold",
-        quest : "Tu as comme une joie immense qui t'envahit, mais au fond de toi cet endroit et cette aventure t'ont profondément marqué. Que décides tu de faire ?",
+        quest : "Vous avez comme une joie immense qui vous envahis, mais au fond de vous cet endroit et cette aventure vous ont profondément marqué. Que décidez vous de faire ?",
         cinematic: false,
         scene: ""
-      }
+      },
+      x: 0,
+      texte: ""
     }
   },
   methods: {
     emitToParent() {
       this.$emit('childToParent', this.datas);
+    },
+    typeWriter() {
+      let textEffect = "Vous retournez sur le lieu de votre recontre avec l'étrange personnage, il vous y attend déjà. Vous pouvez voir une satisfaction sur son visage lorsque vous lui donnez l'or.";
+      if (this.x < textEffect.length) {
+        this.texte += textEffect.charAt(this.x);
+        this.x++;
+        setTimeout(this.typeWriter, 40);
+        if (this.x == textEffect.length - 1) {
+          console.log(this.x);
+        }
+      }
     }
   },
+  mounted(){
+    this.typeWriter();
+  }
 }
 </script>
 
@@ -42,8 +58,8 @@ export default {
     background-size: cover;
     background-position: (0 60%);
   }
-  .text {
-    width : 70%;
-    padding : 30px 30px;
-  }
+  // .text {
+  //   width : 70%;
+  //   padding : 30px 30px;
+  // }
 </style>

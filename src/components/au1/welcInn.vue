@@ -1,8 +1,7 @@
 <template>
   <div class="welcInn">
     <div class="text">
-     <p>Vous arrivez devant un bâtiment en bois et pierres.
-        De la lumière et du bruit émane de cet endroit.<br> Vous regardez à travers la fenêtre et aperçevez un aubergiste qui à l'ai peu commode,<br> mais qui pourrait porbablement vous renseigner...
+      <p>{{this.texte}}
       <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/></span></p>
     </div>
   </div>
@@ -23,13 +22,29 @@ export default {
         quest : "",
         scene : "welcInn2",
         cinematic: true,
-      }
+      },
+      x: 0,
+      texte: ""
     }
   },
   methods: {
     emitToParent () {
       this.$emit('childToParent', this.datas)
+    },
+    typeWriter() {
+      let textEffect = "Vous arrivez devant un bâtiment en bois. De la lumière et du bruit émane de cet endroit. Vous regardez à travers la fenêtre et aperçevez un aubergiste qui n'a pas l'air commode, mais qui pourrait porbablement vous renseigner...";
+      if (this.x < textEffect.length) {
+        this.texte += textEffect.charAt(this.x);
+        this.x++;
+        setTimeout(this.typeWriter, 40);
+        if (this.x == textEffect.length - 1) {
+          console.log(this.x);
+        }
+      }
     }
+  },
+  mounted(){
+    this.typeWriter();
   }
 }
   

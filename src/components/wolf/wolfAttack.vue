@@ -1,7 +1,7 @@
 <template>
   <div class="wolfAttack">
     <div class="text">
-      <p>...un loup semble se diriger vers la ferme et les moutons...
+      <p>{{this.texte}}
       <span class="arrowBtn" v-on:click="emitToParent()"><fa-icon :icon="['fas','arrow-circle-right']" class="link"/>
       </span>
       </p>
@@ -26,13 +26,29 @@ export default {
         quest : "... en regardant sur votre droite, vous voyez une fourche laissée sur la clôture de la ferme. Que décidez-vous de faire ?",
         cinematic: false,
         scene: ""
-      }
+      },
+      x: 0,
+      texte: ""
     }
   },
   methods: {
     emitToParent () {
       this.$emit('childToParent', this.datas)
+    },
+    typeWriter() {
+      let textEffect = "...un loup semble se diriger vers la ferme et les moutons...";
+      if (this.x < textEffect.length) {
+        this.texte += textEffect.charAt(this.x);
+        this.x++;
+        setTimeout(this.typeWriter, 40);
+        if (this.x == textEffect.length - 1) {
+          console.log(this.x);
+        }
+      }
     }
+  },
+  mounted(){
+    this.typeWriter();
   }
 }
   
