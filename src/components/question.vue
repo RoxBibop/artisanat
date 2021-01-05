@@ -17,7 +17,6 @@ export default {
     }
   },
   isReady() {
-    console.log("bonjour à tous")
   },
   watch: {
     '$props':{
@@ -43,9 +42,6 @@ export default {
         this.texte += textEffect.charAt(this.x);
         this.x++;
         setTimeout(this.typeWriter, 40);
-        if (this.x == textEffect.length - 1) {
-          console.log(this.x);
-        }
       }
     }
   }

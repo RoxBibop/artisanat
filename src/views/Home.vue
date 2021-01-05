@@ -49,16 +49,12 @@
 
 <script>
 // @ is an alias to /src
-// import Scene from '@/components/Scene.vue';
 
 export default {
   name: 'Home',
   components: {
   },
   methods: {
-    // cursor: function() {
-    //   console.log(this.$refs.cursor.$el);
-    // }
   }
 }
 </script>

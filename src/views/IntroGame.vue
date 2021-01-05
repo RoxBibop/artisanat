@@ -24,7 +24,6 @@
     },
     methods : {
       isReady() {
-        console.log("is rendered")
       },
       typeWriter() {
         let textEffect = "Sans trop savoir comment vous en êtes arrivés là, vous vous reveillez au coeur d'une forêt dans une époque qui semble différente de la votre et vêtu étrangement. Vous allez tout tenter pour rentrer chez vous, à votre époque. Mais la première chose à faire, c'est probablement de sortir de cette forêt..."

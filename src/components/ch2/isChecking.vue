@@ -31,7 +31,6 @@ export default {
   },
   methods: {
     emitToParent() {
-      console.log("moncul");
       this.$emit('childToParent', this.datas);
     },
     typeWriter() {
@@ -40,9 +39,6 @@ export default {
         this.texte += textEffect.charAt(this.x);
         this.x++;
         setTimeout(this.typeWriter, 40);
-        if (this.x == textEffect.length - 1) {
-          console.log(this.x);
-        }
       }
     }
   },
