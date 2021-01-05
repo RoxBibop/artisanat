@@ -1,7 +1,7 @@
 <template>
   <div class="negociate" v-on:click="click()">
     <div class="awnser"  v-if="displayText">Vous ne voulez pas rester dans cette époque, vous essayez de négocier avec le druide pour pouvoir partir.</div>
-    <img src="../../assets/inn.png" ref="img" alt="">
+    <img src="../../assets/negociate.jpg" ref="img" alt="">
   </div>
 </template>
 

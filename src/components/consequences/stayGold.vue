@@ -1,9 +1,9 @@
 <template>
   <div class="stayGold" v-on:click="click()">
     <div class="awnser" v-if="displayText">
-      Vous décidez après un temps de reflexion de rester, cet endroit vous plaît et vous voulez vous y aventurer avec l'aide de l'or que tuvous avez récolté.
+      Vous décidez après un temps de reflexion de rester, cet endroit vous plaît et vous voulez vous y aventurer avec l'aide de l'or que vous avez récolté.
     </div>
-    <img src="../../assets/inn.png" ref="img" alt="">
+    <img src="../../assets/steal.jpg" ref="img" alt="">
   </div>
 </template>
 
